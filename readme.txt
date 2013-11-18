@@ -41,6 +41,7 @@ Management console is intuitive and easy to use and include statistic per each c
 **Pro Version Features**
 
 [Pro Version](http://ad-changer.cminds.com/)
+
 The CM Ad Changer Pro version Includes all the free version features with the addition of the following features:
 
 * Client Plugin - Includes a client plugin which can be installed on a remote WP installation and serve campaign banners from the CM Ad Changer Server. Each server can serve many clients simultaneously [view image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/image8.png)
