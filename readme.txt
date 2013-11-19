@@ -2,7 +2,7 @@
 Name: CM Ad Changer
 Contributors: CreativeMindsSolutions
 Donate link: http://ad-changer.cminds.com/
-Tags:ad, adbrite,ads,adsense,adserver,advertisement,advertising,banner,banners,commission,google,income,junction,manager,media,money,random,revenue,rotator,server,promotion,promotions,report,reporting,reports,statistics,stats,track,tracking,ad network,seo,ypn,rotator,referral,adroll
+Tags:ad, adbrite,ad,ads,adsense,adserver,advertisement,advertising,banner,banner ad,banners,carousel,commission,google,income,junction,manager,media,money,random,revenue,rotate,server,promotion,promotions,report,reporting,reports,statistics,stats,track,tracking,ad network,seo,ypn,rotator,referral,adroll,slider,click counter,image,Impressions,Impression,click,clicks,banner manager,ads manager,image rotate,inject,injection,insert,monetise,monetize
 Requires at least: 3.4
 Tested up to: 3.7.1
 Stable tag: 1.0.0
