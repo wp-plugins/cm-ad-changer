@@ -11,8 +11,11 @@ Manage, Track and Report Advertising Campaigns Across Sites. Can turn your Turn 
 
 == Description ==
 
-CM Ad Changer can manage advertising campaigns across several WordPress sites simultaneously while restrictions each campaign by parameters such as days in the week, dates, maximum impressions and clicks 
-Management console is intuitive and easy to use and include statistic per each campaign.
+The CM Ad Changer can help you manage, track and provide reports of how your advertising campaigns are being run and turns your WordPress site into an ad server. 
+
+The CM Ad Changer client includes basic connection information to retrieve campaign intelligence from the ad changer server.  The ad changer server includes a campaign management panel and statistics modules that shows how a campaign performs.  By managing advertising campaigns across several Word Press sites at the same time, the CM ad changer makes controlling and overseeing online banner and image promotions easier than ever. 
+
+Each campaign can manage unlimited number of images and banners.  Utilize your banners within your site, by rotating them in random order or even have them targeted with unique URLs.  Measure conversion and count impressions of your banners, use short code to insert banners into posts and pages, while supporting debug mode. 
 
 **Use-Cases**
 
