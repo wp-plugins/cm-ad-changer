@@ -12,6 +12,9 @@ Manage, Track and Report Advertising Campaigns Across Sites. Can turn your Turn 
 == Description ==
 
 The CM Ad Changer can help you manage, track and provide reports of how your advertising campaigns are being run and turns your WordPress site into an ad server. 
+[Visit Plugin Site](http://ad-changer.cminds.com/) 
+
+[youtube http://www.youtube.com/watch?v=rBGl2ENV5Fc]
 
 The CM Ad Changer client includes basic connection information to retrieve campaign intelligence from the ad changer server.  The ad changer server includes a campaign management panel and statistics modules that shows how a campaign performs.  By managing advertising campaigns across several Word Press sites at the same time, the CM ad changer makes controlling and overseeing online banner and image promotions easier than ever. 
 
