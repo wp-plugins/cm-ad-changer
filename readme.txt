@@ -2,7 +2,7 @@
 Name: CM Ad Changer
 Contributors: CreativeMindsSolutions
 Donate link: http://ad-changer.cminds.com/
-Tags:ad, adbrite,ad,ads,adsense,adserver,advertisement,advertising,banner,banner ad,banners,carousel,commission,google,income,junction,manager,media,money,random,revenue,rotate,server,promotion,promotions,report,reporting,reports,statistics,stats,track,tracking,ad network,seo,ypn,rotator,referral,adroll,slider,click counter,image,Impressions,Impression,click,clicks,banner manager,ads manager,image rotate,inject,injection,insert,monetise,monetize
+Tags:ad,adbrite,ad,ads,adsense,adserver,advertisement,advertising,banner,banner ad,banners,carousel,commission,google,income,junction,manager,media,money,random,revenue,rotate,server,promotion,promotions,report,reporting,reports,statistics,stats,track,tracking,ad network,seo,ypn,rotator,referral,adroll,slider,click counter,image,Impressions,Impression,click,clicks,banner manager,ads manager,image rotate,inject,injection,insert,monetise,monetize,responsive,responsive banner
 Requires at least: 3.4
 Tested up to: 3.7.1
 Stable tag: 1.0.0
@@ -12,6 +12,7 @@ Manage, Track and Report Advertising Campaigns Across Sites. Can turn your Turn 
 == Description ==
 
 The CM Ad Changer can help you manage, track and provide reports of how your advertising campaigns are being run and turns your WordPress site into an ad server. 
+
 [Visit Plugin Site](http://ad-changer.cminds.com/) 
 
 [youtube http://www.youtube.com/watch?v=rBGl2ENV5Fc]
@@ -50,6 +51,7 @@ Each campaign can manage unlimited number of images and banners.  Utilize your b
 
 The CM Ad Changer Pro version Includes all the free version features with the addition of the following features:
 
+* NEW: Rotating Banner - Includes rotating banner campaigns using two methods: Fade or Slide
 * Client Plugin - Includes a client plugin which can be installed on a remote WP installation and serve campaign banners from the CM Ad Changer Server. Each server can serve many clients simultaneously [view image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/image8.png)
 * Statistics - Include several statistics and access log modules. Log can be downloaded in csv format. Statistics reports can be shown by month. Statistics also include geo location information by country name. [view image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/image6.png)
 * Restrict by Dates - Campaign can be restricted based on dates [view image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/image-a2.png)
