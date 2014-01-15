@@ -49,7 +49,7 @@ class AC_Requests{
 
 		// Checking if the client site belogns to this campaign
 
-		if(strpos($_SERVER['HTTP_REFERER'],get_bloginfo('url'))!==false||empty($campaign['categories'])) // the request is from server side? Or no domain limitations set?
+		if(strpos($_SERVER['HTTP_REFERER'],get_bloginfo('wpurl'))!==false||empty($campaign['categories'])) // the request is from server side? Or no domain limitations set?
 			$campaign_from_right_category = true;
 		else{ // check if request comes from registered domain
 			$campaign_from_right_category = false;
@@ -82,14 +82,14 @@ class AC_Requests{
 			self::show_error(AC_API_ERROR_11);
 
 		if($campaign['use_selected_banner']){
-			$campaign['selected_banner'] = get_bloginfo('url').'/wp-content/uploads/'.AC_UPLOAD_PATH.$campaign['selected_banner'];
+			$campaign['selected_banner'] = get_bloginfo('wpurl').'/wp-content/uploads/'.AC_UPLOAD_PATH.$campaign['selected_banner'];
 			$campaign['selected_banner_title_tag'] = $campaign['banner_title_tag'][$campaign['selected_banner_id']];
 			$campaign['selected_banner_alt_tag'] = $campaign['banner_alt_tag'][$campaign['selected_banner_id']];
 			$campaign['selected_banner_link'] = $campaign['banner_link'][$campaign['selected_banner_id']];
 			$campaign['selected_banner_id'] = $campaign['banner_id'][$campaign['selected_banner_id']];
 		}else{
 			$random_banner_index = ac_get_random_banner_index($campaign['banner_weight']);
-			$campaign['selected_banner'] = get_bloginfo('url').'/wp-content/uploads/'.AC_UPLOAD_PATH.$campaign['banner_filename'][$random_banner_index];
+			$campaign['selected_banner'] = get_bloginfo('wpurl').'/wp-content/uploads/'.AC_UPLOAD_PATH.$campaign['banner_filename'][$random_banner_index];
 			$campaign['selected_banner_title_tag'] = $campaign['banner_title_tag'][$random_banner_index];
 			$campaign['selected_banner_alt_tag'] = $campaign['banner_alt_tag'][$random_banner_index];
 			$campaign['selected_banner_link'] = $campaign['banner_link'][$random_banner_index];

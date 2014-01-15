@@ -296,8 +296,8 @@ function ac_pagination($current_page = 1)
     global $wpdb;
 
     $radius      = 3;
-//	$base_url = get_bloginfo('url').'/wp-admin/admin.php?page=ac_server_history'; // not ajax
-    $base_url    = get_bloginfo('url') . '/wp-admin/admin-ajax.php?action=acs_get_history'; // ajax
+//	$base_url = get_bloginfo('wpurl').'/wp-admin/admin.php?page=ac_server_history'; // not ajax
+    $base_url    = get_bloginfo('wpurl') . '/wp-admin/admin-ajax.php?action=acs_get_history'; // ajax
     $total       = $wpdb->get_var('SELECT count(*) FROM ' . HISTORY_TABLE);
     $total_pages = ceil($total / AC_HISTORY_PER_PAGE_LIMIT);
     if($total_pages == 1) return '';

@@ -4,7 +4,7 @@
   Plugin URI: http://ad-changer.cminds.com/
   Description: Ad Changer Server. Manage, Track and Report Advertising Campaigns Across Sites
   Author: CreativeMindsSolutions
-  Version: 1.0.0
+  Version: 1.1.0
 */
 
 /**

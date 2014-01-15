@@ -22,10 +22,10 @@ class AC_Client{
 			return 'Wrong campaign ID';
 		}
 
-		$server_url = get_bloginfo('url');
+		$server_url = get_bloginfo('wpurl');
 		$url = $server_url.'/?acs_action=get_banner&campaign_id='.$campaign_id;
 
-		$data = self::curl_request($url,'http_referer='.get_bloginfo('url'));
+		$data = self::curl_request($url,'http_referer='.get_bloginfo('wpurl'));
 
 		$banner = json_decode($data,true);
 
@@ -112,13 +112,13 @@ class AC_Client{
 	function trigger_click_event(){ // AJAX
 
 		if(!isset($_GET['server_url']))
-			$server_url = get_bloginfo('url');
+			$server_url = get_bloginfo('wpurl');
 		else
 			$server_url = $_GET['server_url'];
 
 		$timestamp=time();
 		$url = $server_url.'/?acs_action=trigger_click_event&campaign_id='.$_REQUEST['campaign_id'].'&banner_id='.$_REQUEST['banner_id'];
-		$data = self::curl_request($url,'http_referer='.get_bloginfo('url'));
+		$data = self::curl_request($url,'http_referer='.get_bloginfo('wpurl'));
 
 		exit;
 	}
@@ -133,7 +133,7 @@ class AC_Client{
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_REFERER, get_bloginfo('url'));
+		curl_setopt($ch, CURLOPT_REFERER, get_bloginfo('wpurl'));
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);

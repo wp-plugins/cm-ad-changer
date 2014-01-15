@@ -8,9 +8,9 @@
 ?>
 
 	<script>
-		var base_url = '<?php echo get_bloginfo('url')?>';
+		var base_url = '<?php echo get_bloginfo('wpurl')?>';
 		var plugin_url='<?php echo AC_PLUGIN_URL?>';
-		var upload_tmp_path='<?php echo get_bloginfo('url').'/wp-content/uploads/'.AC_UPLOAD_PATH.AC_TMP_UPLOAD_PATH; ?>';
+		var upload_tmp_path='<?php echo get_bloginfo('wpurl').'/wp-content/uploads/'.AC_UPLOAD_PATH.AC_TMP_UPLOAD_PATH; ?>';
 		var banners_limit = <?php echo BANNERS_PER_CAMPAIGN_LIMIT; ?>;
 		var next_banner_index = 0;
 		var label_descriptions = new Object();
@@ -61,7 +61,7 @@
 ?>
 				<tr campaign_id="<?php echo $campaign->campaign_id?>"<?php echo isset($fields_data['campaign_id'])&&$fields_data['campaign_id']==$campaign->campaign_id?' class="selected_campaign"':''?>>
 					<td>
-						<a href="<?php echo get_bloginfo('url')?>/wp-admin/admin.php?page=ac_server_campaigns&action=edit&campaign_id=<?php echo $campaign->campaign_id?>" class="field_tip" title="<?php echo $campaign->comment?>"><?php echo $campaign->title; ?></a>
+						<a href="<?php echo get_bloginfo('wpurl')?>/wp-admin/admin.php?page=ac_server_campaigns&action=edit&campaign_id=<?php echo $campaign->campaign_id?>" class="field_tip" title="<?php echo $campaign->comment?>"><?php echo $campaign->title; ?></a>
 					</td>
 					<td><?php echo $campaign->campaign_id; ?></td>
 					<td><?php echo $campaign->banners_cnt; ?></td>
@@ -69,8 +69,8 @@
 					<td><?php echo !is_null($campaign->impressions_cnt)?$campaign->impressions_cnt:'-'; ?></td>
 					<td><?php echo ($campaign->status=='1'?'Active':'Inactive')?></td>
 					<td class="actions">
-						<a href="<?php echo get_bloginfo('url')?>/wp-admin/admin.php?page=ac_server_campaigns&action=edit&campaign_id=<?php echo $campaign->campaign_id?>"><img src="<?php echo AC_PLUGIN_URL.'/assets/images/edit.png'?>" /></a>
-						<a href="<?php echo get_bloginfo('url')?>/wp-admin/admin.php?page=ac_server_campaigns&action=delete&campaign_id=<?php echo $campaign->campaign_id?>" class="delete_campaign_link"><img src="<?php echo AC_PLUGIN_URL.'/assets/images/trash.png'?>" /></a>
+						<a href="<?php echo get_bloginfo('wpurl')?>/wp-admin/admin.php?page=ac_server_campaigns&action=edit&campaign_id=<?php echo $campaign->campaign_id?>"><img src="<?php echo AC_PLUGIN_URL.'/assets/images/edit.png'?>" /></a>
+						<a href="<?php echo get_bloginfo('wpurl')?>/wp-admin/admin.php?page=ac_server_campaigns&action=delete&campaign_id=<?php echo $campaign->campaign_id?>" class="delete_campaign_link"><img src="<?php echo AC_PLUGIN_URL.'/assets/images/trash.png'?>" /></a>
 					</td>
 				</tr>
 <?php
@@ -161,12 +161,12 @@
 										if((int)$fields_data['banner_clicks_cnt'][$banner_index]>0)
 											$clicks_rate=round(((int)$fields_data['banner_clicks_cnt'][$banner_index]/(int)$fields_data['banner_impressions_cnt'][$banner_index])*100);
 
-										//if(@file_get_contents(get_bloginfo('url') . '/wp-content/uploads/'.AC_UPLOAD_PATH.''.$banner_filename)){
+										//if(@file_get_contents(get_bloginfo('wpurl') . '/wp-content/uploads/'.AC_UPLOAD_PATH.''.$banner_filename)){
 										if(file_exists(WP_CONTENT_DIR . '/uploads/'.AC_UPLOAD_PATH.$banner_filename)){
-											$filename = get_bloginfo('url') . '/wp-content/uploads/'.AC_UPLOAD_PATH.$banner_filename;
+											$filename = get_bloginfo('wpurl') . '/wp-content/uploads/'.AC_UPLOAD_PATH.$banner_filename;
 											$filename1 = WP_CONTENT_DIR . '/uploads/'.AC_UPLOAD_PATH.$banner_filename;
 										}else{
-											$filename = get_bloginfo('url') . '/wp-content/uploads/'.AC_UPLOAD_PATH.AC_TMP_UPLOAD_PATH.''.$banner_filename;
+											$filename = get_bloginfo('wpurl') . '/wp-content/uploads/'.AC_UPLOAD_PATH.AC_TMP_UPLOAD_PATH.''.$banner_filename;
 											$filename1 = WP_CONTENT_DIR . '/uploads/'.AC_UPLOAD_PATH.AC_TMP_UPLOAD_PATH.$banner_filename;
 										}
 
