@@ -50,32 +50,32 @@
 	<div class="ac-edit-form clear">
 		<form id="acs_settings_form" method="post">
 		<input type="hidden" name="action" value="acs_settings" />
-		<table cellspacing=3 cellpadding=0 border=0>
-			<tr>
-				<td>
-					<label class="ac-form-label" for="acs_active" >Server Active</label><div class="field_help" title="<?php echo $label_descriptions['acs_active']?>"></div>
-				</td>
-				<td>
-					<input type="checkbox" name="acs_active" id="acs_active" value="1" <?php echo ($fields_data['acs_active']=='1'?'checked=checked':'')?> />
-         <div style="clear:both;height:20px;"></div>		
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<label class="ac-form-label" for="acs_max_campaigns_no" >Max Number of Campaigns</label><div class="field_help" title="<?php echo $label_descriptions['acs_max_campaigns_no']?>"></div>
-				</td>
-				<td>
-					<input type="text" name="acs_max_campaigns_no" id="acs_max_campaigns_no" value="<?php echo $fields_data['acs_max_campaigns_no']?>" size=1 />
-				</td>
-			</tr>		
-			<tr>
-				<td style="text-align:right" colspan=2>
-					<input type="submit" value="Store Settings" id="submit_button">
-				</td>
-			</tr>				
-		</table>
-		<br><br>		
-		<table cellspacing=3 cellpadding=0 border=0>
+		<div id="settings_fields" class="clear">
+			<ul>
+				<li><a href="#general_settings_fields">General Settings</a></li>
+				<li><a href="#cutom_css_settings">Custom CSS</a></li>
+			</ul>
+
+			<table cellspacing=3 cellpadding=0 border=0 id="general_settings_fields">
+				<tr>
+					<td>
+						<label class="ac-form-label" for="acs_active" >Server Active</label><div class="field_help" title="<?php echo $label_descriptions['acs_active']?>"></div>
+					</td>
+					<td>
+						<input type="checkbox" name="acs_active" id="acs_active" value="1" <?php echo ($fields_data['acs_active']=='1'?'checked=checked':'')?> />
+			 <div style="clear:both;height:20px;"></div>		
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="ac-form-label" for="acs_max_campaigns_no" >Max Number of Campaigns</label><div class="field_help" title="<?php echo $label_descriptions['acs_max_campaigns_no']?>"></div>
+					</td>
+					<td>
+						<input type="text" name="acs_max_campaigns_no" id="acs_max_campaigns_no" value="<?php echo $fields_data['acs_max_campaigns_no']?>" size=1 />
+					</td>
+				</tr>					
+			</table>	
+		<table cellspacing=3 cellpadding=0 border=0 id="cutom_css_settings">
 			<tr>
 				<td valign=top>
 					<label class="ac-form-label" for="acs_custom_css" >Custom CSS</label><div class="field_help" title="<?php echo $label_descriptions['acs_custom_css']?>"></div>
@@ -83,16 +83,14 @@
 				<td>
 					<textarea id="acs_custom_css" name="acs_custom_css" rows=7 value="<?php echo stripslashes($fields_data['acs_custom_css'])?>"><?php echo stripslashes($fields_data['acs_custom_css'])?></textarea>
 				</td>
-			</tr>				
-			<tr>
-				<td style="text-align:right" colspan=2>
-					<input type="submit" value="Store Custom CSS" id="submit_button">
-				</td>
-			</tr>				
+			</tr>							
 		</table>
+	</div>
+		<input type="submit" value="Store Settings" id="submit_button">		
 		</form>
 <script>
 jQuery(document).ready(function(){
+	jQuery('#settings_fields').tabs();	
 	jQuery('#acs_max_campaigns_no').spinner({
 		max: 50,
 		min: 0

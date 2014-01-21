@@ -37,7 +37,7 @@ $label_descriptions=array(// SETTINGS
 						  'acs_max_campaigns_no'=>'Maximal Number of Campaigns in server',
 						  'acs_div_wrapper'=>'Div Wrapper (server side) - Will add div around banner on server side',
 						  'acs_class_name'=>'Class Name - Will set the class name for div',
-						  'acc_custom_css'=>'Custom CSS style<br/>Custom CSS will be injected into body before banner is shown and only on post or pages where campaign is active. <br/><br/>Example:<br/><b>#featured.has-badge {margin-bottom: 85px;}</b>',
+						  'acs_custom_css'=>'Custom CSS style<br/>Custom CSS will be injected into body before banner is shown and only on post or pages where campaign is active. <br/><br/>Example:<br/><b>#featured.has-badge {margin-bottom: 85px;}</b>',
 						  
 						  // CAMPAIGNS
 						  'title'=>'Campaign Name. For internal use only',

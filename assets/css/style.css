@@ -12,17 +12,13 @@
 	max-width:800px;
 }
 
-.ad_changer.ac_settings .ac-edit-form{
-	max-width:500px;
-	min-width: 500px;
-}
-
-.ad_changer.ac_settings .ac-edit-form form > table{
-	width: 100%;
-}
-
 .ad_changer.ac_settings .ac-edit-form table{
- margin-top:5px; padding:10px; border-radius:6px; background-color:#f5f5f5;vertical-align: top;box-sizing: border-box;
+ margin-top:5px; padding:10px; border-radius:6px; background-color:#f5f5f5;vertical-align: top;box-sizing: border-box; width: 100%;
+}
+
+
+.ad_changer.ac_settings #settings_fields table td:first-child{
+	width:220px;
 }
 
 .ad_changer.ac_settings .acs-shortcode-reference ul{
@@ -127,10 +123,6 @@
 
 .ad_changer #ac-fields > table > tbody > tr > td:first-child{
 	padding-right: 10px;
-}
-
-.ad_changer.ac_settings .ac-edit-form form > table > tbody > tr > td:last-child{
-	width: 60%;
 }
 
 .ad_changer .ac-form-hidden {display:none}
