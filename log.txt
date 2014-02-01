@@ -1,0 +1,11 @@
+2014-01-25 14:58:20: AC_Client::banner_output()
+2014-01-25 14:58:20: AC_Request::get_banner()
+2014-01-25 14:58:21: Returning response from AC_Request:get_banner()
+2014-01-25 14:58:21: Banner received
+2014-01-25 14:58:48: AC_Client::banner_output()
+2014-01-25 14:58:48: AC_Request::get_banner()
+2014-01-25 14:58:49: Returning response from AC_Request:get_banner()
+2014-01-25 14:58:49: Banner received
+2014-01-25 15:00:31: AC_Client::banner_output()
+2014-01-25 15:00:31: AC_Request::get_banner()
+2014-01-25 15:00:31: Error response from AC_Request: Campaign is inactive

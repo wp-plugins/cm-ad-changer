@@ -5,15 +5,12 @@
  * @author CreativeMinds (http://ad-changer.cminds.com)
  * @copyright Copyright (c) 2013, CreativeMinds
  */
-
+define ('CMAC_DEBUG','0');
 define('AC_UPLOAD_PATH','ac_uploads/');
 define('AC_TMP_UPLOAD_PATH','tmp/');
 define('CAMPAIGNS_TABLE',$table_prefix.'cm_campaigns'); // $table_prifix comes from Wordpress core
-define('CATEGORIES_TABLE',$table_prefix.'cm_campaign_categories');
-define('CAMPAIGN_CATEGORIES_REL_TABLE',$table_prefix.'cm_campaign_categories_rel');
 define('IMAGES_TABLE',$table_prefix.'cm_campaign_images');
-define('PERIODS_TABLE',$table_prefix.'cm_campaign_periods');
-define('HISTORY_TABLE',$table_prefix.'cm_campaign_history');
+
 define('CAMPAIGNS_LIMIT','100');
 define('BANNERS_PER_CAMPAIGN_LIMIT','50');
 define('AC_HISTORY_PER_PAGE_LIMIT','50');

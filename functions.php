@@ -12,7 +12,8 @@
  */
 function ac_activate()
 {
-    global $wpdb, $table_prefix; // have to use $table_prefix
+	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+    global $wpdb, $table_prefix; // have to use $table_prefix	
 
     /*
       $wpdb->query('DROP TABLE IF EXISTS '.$table_prefix.CAMPAIGNS_TABLE);
@@ -32,24 +33,28 @@ function ac_activate()
 				  `campaign_id` int(11) NOT NULL AUTO_INCREMENT,
 				  `title` varchar(100) NOT NULL,
 				  `link` varchar(200) NOT NULL,
-				  `selected_banner` int(11) NOT NULL,
-				  `use_selected_banner` tinyint(1) NOT NULL DEFAULT \'1\',
+				  `selected_banner` int(11) NOT NULL DEFAULT \'0\',
+				  `banner_display_method` enum(\'random\',\'selected\',\'all\') NOT NULL,
 				  `max_clicks` bigint(20) NOT NULL,
 				  `max_impressions` bigint(20) NOT NULL,
 				  `comment` text NOT NULL,
+				  `custom_js` text NOT NULL,
+				  `active_week_days` varchar(30) NOT NULL,
 				  `status` tinyint(4) NOT NULL,
+				  `send_notifications` tinyint(4) NOT NULL,
 				  PRIMARY KEY (`campaign_id`)
-				) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;');
+				) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;');
 
     $wpdb->query('CREATE TABLE IF NOT EXISTS `' . $table_prefix . IMAGES_TABLE . '` (
 				  `image_id` int(11) NOT NULL AUTO_INCREMENT,
 				  `campaign_id` int(11) NOT NULL,
-				  `title` varchar(50) NOT NULL,
-				  `title_tag` varchar(200) NOT NULL,
-				  `alt_tag` varchar(200) NOT NULL,
-				  `link` varchar(150) NOT NULL,
-				  `weight` tinyint(4) NOT NULL,
-				  `filename` varchar(50) NOT NULL,
+				  `parent_image_id` int(11) NOT NULL DEFAULT \'0\',
+				  `title` varchar(50) NOT NULL DEFAULT \'\',
+				  `title_tag` varchar(200) NOT NULL DEFAULT \'\',
+				  `alt_tag` varchar(200) NOT NULL DEFAULT \'\',
+				  `link` varchar(150) NOT NULL DEFAULT \'\',
+				  `weight` tinyint(4) NOT NULL DEFAULT \'0\',
+				  `filename` varchar(50) NOT NULL DEFAULT \'\',
 				  PRIMARY KEY (`image_id`)
 				) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;');
 
@@ -417,5 +422,14 @@ function ac_outputCSV($data)
     array_walk($data, '__outputCSV', $outstream);
 
     fclose($outstream);
+}
+
+function cmac_log($message){
+	if(CMAC_DEBUG!='1')
+		return;
+		
+	$f = fopen(AC_PLUGIN_PATH.'/log.txt','a');
+	fwrite($f,date('Y-m-d H:i:s').': '.$message."\n");
+	fclose($f);
 }
 ?>

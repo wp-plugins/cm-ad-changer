@@ -142,8 +142,8 @@
 							<label class="ac-form-label" for="use_random_banner">Display Method</label><div class="field_help" title="<?php echo $label_descriptions['use_selected_banner']?>"></div>
 						</td>
 						<td>
-							<input type="radio" aria-required="true" name="use_selected_banner" id="use_random_banner" <?php echo (isset($fields_data['use_selected_banner'])&&$fields_data['use_selected_banner']=='0'?'checked=checked':(!isset($fields_data['use_selected_banner'])?'checked=checked':''))?> value="0" />&nbsp;<label for="use_random_banner">Random Banner</label><br/>
-							<input type="radio" aria-required="true" name="use_selected_banner" id="use_selected_banner" <?php echo (isset($fields_data['use_selected_banner'])&&$fields_data['use_selected_banner']=='1'?'checked=checked':'')?> value="1" />&nbsp;<label for="use_selected_banner">Selected Banner</label>
+							<input type="radio" aria-required="true" name="banner_display_method" id="use_random_banner" <?php echo (isset($fields_data['banner_display_method'])&&$fields_data['banner_display_method']=='random'?'checked=checked':(!isset($fields_data['banner_display_method'])?'checked=checked':''))?> value="random" />&nbsp;<label for="use_random_banner">Random Banner</label><br/>
+							<input type="radio" aria-required="true" name="banner_display_method" id="use_selected_banner" <?php echo (isset($fields_data['banner_display_method'])&&$fields_data['banner_display_method']=='selected'?'checked=checked':'')?> value="selected" />&nbsp;<label for="use_selected_banner">Selected Banner</label>
 						</td>
 					</tr>
 					<tr>

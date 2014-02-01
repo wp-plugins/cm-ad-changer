@@ -14,6 +14,7 @@ class AC_Client{
 	 * @param Array   $args  Shortcode arguments
 	 */
 	public function banner_output($args){
+		cmac_log('AC_Client::banner_output()');
 		if(is_array($args))
 			$campaign_id = $args['campaign_id'];
 		elseif(is_numeric($args))
@@ -25,14 +26,18 @@ class AC_Client{
 		$server_url = get_bloginfo('wpurl');
 		$url = $server_url.'/?acs_action=get_banner&campaign_id='.$campaign_id;
 
-		$data = self::curl_request($url,'http_referer='.get_bloginfo('wpurl'));
+//		$data = self::curl_request($url,'http_referer='.get_bloginfo('wpurl'));
+		$banner = AC_Requests::get_banner(get_bloginfo('wpurl'), // http referer
+										$campaign_id  // campaign id
+										);
 
-		$banner = json_decode($data,true);
+//		$banner = json_decode($data,true);
 
 		if(isset($args['debug']))
 			echo ac_format_list($banner,'Ad changer debug Info:','acc_debug');
 
 		if(!isset($banner['error'])&&isset($banner['banner_id'])){
+			cmac_log('Banner received');
 			$ret_html = '';
 			
 /*			
@@ -45,15 +50,15 @@ class AC_Client{
 			$ret_html .= ">\n";				
 */
 
-	// Add custom css before banner
-	$custom_css = get_option('acc_custom_css','');
-	if(!empty($custom_css)){
-		$ret_html .= "\n<!--ACC Custom CSS-->\n";
-		$ret_html .= "<style>\n";
-		$ret_html .= $custom_css;
-		$ret_html .= "\n</style>";
-		$ret_html .= "\n<!--ACC Custom CSS: END-->\n";
-		}	
+			// Add custom css before banner
+			$custom_css = get_option('acc_custom_css','');
+			if(!empty($custom_css)){
+				$ret_html .= "\n<!--ACC Custom CSS-->\n";
+				$ret_html .= "<style>\n";
+				$ret_html .= $custom_css;
+				$ret_html .= "\n</style>";
+				$ret_html .= "\n<!--ACC Custom CSS: END-->\n";
+				}	
 
 			if(isset($args['class'])&&!empty($args['class']))
 				$css_class = $args['class'];
@@ -87,7 +92,8 @@ class AC_Client{
 			$ret_html .= self::get_script($campaign_id, $banner['banner_id']);	
 			
 			return $ret_html;
-		}
+		}else
+			cmac_log('Error response from AC_Request: '.$banner['error']);
 	}
 
 	/**
@@ -103,31 +109,8 @@ class AC_Client{
 
 		return $script;
 	}
-	
-	
 
-	/**
-	 * Send trigger click request to the server
-	 */
-	function trigger_click_event(){ // AJAX
-
-		if(!isset($_GET['server_url']))
-			$server_url = get_bloginfo('wpurl');
-		else
-			$server_url = $_GET['server_url'];
-
-		$timestamp=time();
-		$url = $server_url.'/?acs_action=trigger_click_event&campaign_id='.$_REQUEST['campaign_id'].'&banner_id='.$_REQUEST['banner_id'];
-		$data = self::curl_request($url,'http_referer='.get_bloginfo('wpurl'));
-
-		exit;
-	}
-
-	/**
-	 * CURL request
-	 * @param String   $url remote URL
-	 * @param String   $post POST data
-	 */	
+/*
 	private function curl_request($url=null,$post=''){
 
 		$ch = curl_init();
@@ -144,5 +127,5 @@ class AC_Client{
 
 		return $data;
 	}
-
+*/
 }

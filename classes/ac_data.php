@@ -37,7 +37,7 @@ class AC_Data{
 		if(isset($data['campaign_id'])&&!is_numeric($data['campaign_id']))
 			$errors[]='Unknown campaign';
 			
-		if($data['use_selected_banner']=='1'&&!empty($data['banner_filename'])&&empty($data['selected_banner']))
+		if($data['banner_display_method']=='selected'&&!empty($data['banner_filename'])&&empty($data['selected_banner']))
 			$errors[] = 'Please select a banner';
 		
 		$banner_weight_sum=0;
@@ -62,12 +62,11 @@ class AC_Data{
 		// VALIDATIONS END
 		
 		// 1. Inserting the campaign record
-	
 		if(!isset($data['campaign_id'])){
-			$wpdb->query($wpdb->prepare('INSERT INTO '.CAMPAIGNS_TABLE.' SET `title`=%s, `link`=%s, `use_selected_banner`=%d, `max_impressions`=%d, `max_clicks`=%d, `comment`=%s, `status`=%d',
+			$wpdb->query($wpdb->prepare('INSERT INTO '.CAMPAIGNS_TABLE.' SET `title`=%s, `link`=%s, `banner_display_method`=%s, `max_impressions`=%d, `max_clicks`=%d, `comment`=%s, `status`=%d',
 										$data['title'],
 										$data['link'],
-										$data['use_selected_banner'],
+										$data['banner_display_method'],
 										$data['max_impressions'],
 										$data['max_clicks'],
 										$data['comment'],
@@ -75,10 +74,10 @@ class AC_Data{
 										
 			$new_campaign_id = $wpdb->insert_id;
 		}else{
-			$wpdb->query($wpdb->prepare('UPDATE '.CAMPAIGNS_TABLE.' SET `title`=%s, `link`=%s, `use_selected_banner`=%d, `max_impressions`=%d, `max_clicks`=%d, `comment`=%s, `status`=%d WHERE `campaign_id`="'.$data['campaign_id'].'"',
+			$wpdb->query($wpdb->prepare('UPDATE '.CAMPAIGNS_TABLE.' SET `title`=%s, `link`=%s, `banner_display_method`=%s, `max_impressions`=%d, `max_clicks`=%d, `comment`=%s, `status`=%d WHERE `campaign_id`="'.$data['campaign_id'].'"',
 										$data['title'],
 										$data['link'],
-										$data['use_selected_banner'],
+										$data['banner_display_method'],
 										$data['max_impressions'],
 										$data['max_clicks'],
 										$data['comment'],
@@ -178,6 +177,7 @@ class AC_Data{
 	 * @param Array   $data  Array of fields
 	 */
 	function ac_handle_settings_post($data){
+
 		$errors = array();
 
 		if(empty($data['acs_max_campaigns_no']))
@@ -199,19 +199,10 @@ class AC_Data{
 		if(!empty($errors))
 			return array('errors'=>$errors,'data'=>$data);
 		
-		if(isset($_POST['acs_active'])){
-			if ( get_option( 'acs_active' ) !== false ){
-				update_option( 'acs_active', 1 );
-			}else{
-				add_option( 'acs_active', 1 );	
-			}
-		}else{
-			if ( get_option( 'acs_active' ) !== false ){
-				update_option( 'acs_active', 0 );
-			}else{		
-				add_option( 'acs_active', 0 );			
-			}
-		}
+		if(isset($_POST['acs_active']))
+			update_option( 'acs_active', 1 );
+		else
+			update_option( 'acs_active', 0 );
 	
 		if(isset($_POST['acs_max_campaigns_no'])){
 			if ( get_option( 'acs_max_campaigns_no' ) !== false ){
@@ -280,7 +271,7 @@ class AC_Data{
 	
 		$ret_fields['title'] = $campaign->title;
 		$ret_fields['link'] = $campaign->link;
-		$ret_fields['use_selected_banner'] = $campaign->use_selected_banner;
+		$ret_fields['banner_display_method'] = $campaign->banner_display_method;
 		$ret_fields['selected_banner_id']=$campaign->selected_banner;
 		$ret_fields['max_impressions'] = $campaign->max_impressions;
 		$ret_fields['max_clicks'] = $campaign->max_clicks;
