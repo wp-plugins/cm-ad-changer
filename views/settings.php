@@ -54,6 +54,7 @@
 			<ul>
 				<li><a href="#general_settings_fields">General Settings</a></li>
 				<li><a href="#cutom_css_settings">Custom CSS</a></li>
+				<li><a href="#server-info">Server Information</a></li>
 			</ul>
 
 			<table cellspacing=3 cellpadding=0 border=0 id="general_settings_fields">
@@ -85,6 +86,80 @@
 				</td>
 			</tr>							
 		</table>
+		
+<!-- Start Server information Module -->
+			<div id="server-info">
+				<div class='block'>
+                <h3>Server Information</h3>
+<?php 
+		
+	if (ini_get('safe_mode'))
+		$safe_mode = 'On';
+	else
+		$safe_mode = 'Off';
+
+	if (!($upload_max = ini_get('upload_max_filesize')))
+		$upload_max = 'N/A';
+
+	if (!($post_max = ini_get('post_max_size')))
+		$post_max = 'N/A';
+
+	if (!($memory_limit = ini_get('memory_limit')))
+		$memory_limit = 'N/A';
+
+	if (!($cURL = function_exists('curl_version')))
+		$cURL = 'Off';
+	else
+		$cURL = 'On';
+
+
+		$php_info = parse_php_info();
+?>
+				<span class="description" style="">
+				CM Ad Changer is a mix of a JavaScript application and a parsing engine. 
+				This information is useful to check if the CM Ad Changer might have some incompatibilities with your server. Make sure GD support is enabled.
+				</span>
+				<table class="form-table">
+				<tr>
+					<td>PHP Version</td><td><?php echo phpversion(); ?></td>
+				</tr>
+				<tr>
+					<td>PHP Safe Mode</td><td><?php echo $safe_mode; ?> (Should be Off)</td>
+				</tr>
+				<tr>
+					<td>PHP Max Upload Size</td><td><?php echo $upload_max; ?></td>
+				</tr>
+				<tr>
+					<td>PHP Max Post Size</td><td><?php echo $post_max; ?></td>
+				</tr>
+				<tr>
+					<td>PHP Memory Limit</td><td><?php echo $memory_limit; ?></td>
+				</tr>
+				<tr>
+					<td>PHP cURL</td><td><?php echo $cURL; ?> (Should be On)</td>
+				</tr>
+
+				<?php
+					if (isset($php_info['gd']) && is_array($php_info['gd']))
+					{
+						foreach ($php_info['gd'] as $key => $val) {
+							if (!preg_match('/(WBMP|XBM|Freetype|T1Lib)/i', $key) && $key != 'Directive' && $key != 'gd.jpeg_ignore_warning') {
+								echo '<tr>';
+								echo '<td>'.$key.'</td>';
+								if (stripos($key, 'support') === false) {
+									echo '<td>'.$val.'</td>';
+								}
+								else {
+									echo '<td>enabled</td>';
+								}
+								echo '</tr>';
+							}
+						}
+					}
+				?>
+				</table>
+				</div>
+			</div>		
 	</div>
 		<input type="submit" value="Store Settings" id="submit_button">		
 		</form>

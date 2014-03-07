@@ -2,24 +2,28 @@
 Name: CM Ad Changer
 Contributors: CreativeMindsSolutions
 Donate link: http://ad-changer.cminds.com/
-Tags:ad,adbrite,ad,ads,adsense,adserver,advertisement,advertising,banner,banner ad,banners,carousel,commission,google,income,junction,manager,media,money,random,revenue,rotate,rotating,variation,variations,geolocation, geo location,ajax,server,promotion,promotions,report,reporting,reports,statistics,stats,track,tracking,ad network,seo,ypn,rotator,referral,adroll,slider,click counter,image,Impressions,Impression,click,clicks,banner manager,ads manager,image rotate,inject,injection,insert,monetise,monetize,responsive,responsive banner,notification,notifications
+Tags:ad,ad,ad network,adbrite,adroll,ads,ads manager,adsense,adserver,advertisement,advertising,ajax,banner,banner ad,banner changer,banner manager,banner rotator,banners,carousel,click,click counter,clicks,commission,geo location,geolocation,google,image,image rotate,Impression,Impressions,income,inject,injection,insert,junction,manager,media,monetise,monetize,money,notification,notifications,promotion,promotions,random,referral,report,reporting,reports,responsive,responsive banner,revenue,rotate,rotating,rotator,seo,server,slider,statistics,stats,track,tracking,variation,variations,ypn
 Requires at least: 3.4
-Tested up to: 3.8.0
-Stable tag: 1.1.4
+Tested up to: 3.8.1
+Stable tag: 1.2.1
 
-Manage, Track and Report Advertising Campaigns Across Sites. Can turn your Turn your WP into an Ad Server
+Manage, Track and Report the Advertising Campaigns and Banners on Your Site. Turn your WP into an Ad Server!
 
 == Description ==
 
-The CM Ad Changer can help you manage, track and provide reports of how your advertising campaigns are being run and turns your WordPress site into an ad server. 
+The CM Ad Changer can help you manage, track and provide reports of how your advertising campaigns are being run and turns your WordPress site into an ad server.
 
-[Visit Plugin Site](http://ad-changer.cminds.com/) 
+[Visit Plugin Site](http://ad-changer.cminds.com/)
 
 [youtube http://www.youtube.com/watch?v=rBGl2ENV5Fc]
 
-The CM Ad Changer client includes basic connection information to retrieve campaign intelligence from the ad changer server.  The ad changer server includes a campaign management panel and statistics modules that shows how a campaign performs.  By managing advertising campaigns across several Word Press sites at the same time, the CM ad changer makes controlling and overseeing online banner and image promotions easier than ever. 
+The CM Ad Changer client includes basic connection information to retrieve campaign intelligence from the ad changer server.
+The ad changer server includes a campaign management panel and statistics modules that shows how a campaign performs.
+By managing advertising campaigns across several Word Press sites at the same time, the CM ad changer makes controlling and overseeing online banner and image promotions easier than ever.
 
-Each campaign can manage unlimited number of images and banners.  Utilize your banners within your site, by rotating them in random order or even have them targeted with unique URLs.  Measure conversion and count impressions of your banners, use short code to insert banners into posts and pages, while supporting debug mode. 
+Each campaign can manage unlimited number of images and banners.
+Utilize your banners within your site, by rotating them in random order or even have them targeted with unique URLs.
+Measure conversion and count impressions of your banners, use short code to insert banners into posts and pages, while supporting debug mode.
 
 **Use-Cases**
 
@@ -84,7 +88,7 @@ Simply add a campaign and define upload banners. You can then insert a shortcode
 
 == Screenshots ==
 
-1. Banners management 
+1. Banners management
 2. Set dates when campaign is active
 3. Set active days
 4. Plugin settings
@@ -93,8 +97,8 @@ Simply add a campaign and define upload banners. You can then insert a shortcode
 
 
 == Changelog ==
-= 1.1.4 =
-* Fix bug in sql query
+= 1.2.0 =
+* General code refactoring and fixes
 
 = 1.1.2 =
 * Settings tabified
