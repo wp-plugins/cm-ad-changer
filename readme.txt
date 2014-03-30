@@ -2,7 +2,7 @@
 Name: CM Ad Changer
 Contributors: CreativeMindsSolutions
 Donate link: http://ad-changer.cminds.com/
-Tags:ad,ad,ad network,adbrite,adroll,ads,ads manager,adsense,adserver,advertisement,advertising,ajax,banner,banner ad,banner changer,banner manager,banner rotator,banners,carousel,click,click counter,clicks,commission,geo location,geolocation,google,image,image rotate,Impression,Impressions,income,inject,injection,insert,junction,manager,media,monetise,monetize,money,notification,notifications,promotion,promotions,random,referral,report,reporting,reports,responsive,responsive banner,revenue,rotate,rotating,rotator,seo,server,slider,statistics,stats,track,tracking,variation,variations,ypn
+Tags:ad,ad,ad network,adbrite,adroll,ads,ads manager,adsense,adserver,advertisement,advertising,ajax,banner,banner ad,banner changer,banner manager,banner rotator,banners,carousel,click,click counter,clicks,commission,geo location,geolocation,google,image,image rotate,Impression,Impressions,income,inject,injection,insert,junction,manager,media,monetise,monetize,money,notification,notifications,promotion,promotions,random,referral,report,reporting,reports,responsive,responsive banner,revenue,rotate,rotating,rotator,seo,server,slider,statistics,stats,track,tracking,variation,variations,ypn,cloud,cloud storage
 Requires at least: 3.4
 Tested up to: 3.8.1
 Stable tag: 1.2.5
@@ -11,31 +11,31 @@ Manage, Track and Report the Advertising Campaigns and Banners on Your Site. Tur
 
 == Description ==
 
-The CM Ad Changer can help you manage, track and provide reports of how your advertising campaigns are being run and turns your WordPress site into an ad server.
+The CM Ad Changer manages several banner advertising campaigns across multiple WordPress sites simultaneously. As an ad-server, plugin settings manage or restrict the showing of banner ads according to each campaign parameters. Campaign settings include days of the week, custom ad campaign dates, maximum numbers of impressions or clicks per banner.
+The ad-server's management console is intuitive and easy to use. View statistic for each campaign on multiple WordPress websites. 
 
 [Visit Plugin Site](http://ad-changer.cminds.com/)
 
 [youtube http://www.youtube.com/watch?v=rBGl2ENV5Fc]
 
-The CM Ad Changer client includes basic connection information to retrieve campaign intelligence from the ad changer server.
-The ad changer server includes a campaign management panel and statistics modules that shows how a campaign performs.
-By managing advertising campaigns across several Word Press sites at the same time, the CM ad changer makes controlling and overseeing online banner and image promotions easier than ever.
-
-Each campaign can manage unlimited number of images and banners.
-Utilize your banners within your site, by rotating them in random order or even have them targeted with unique URLs.
-Measure conversion and count impressions of your banners, use short code to insert banners into posts and pages, while supporting debug mode.
-
 **Use-Cases**
 
 * Banners Management - Manage banners within your site.
-* Rotation - Show rotating images/banners in random order anywhere in your site.
+* Rotation - Show rotating images/banners anywhere in your site.
+* Random - Show random images/banners anywhere in your site.
 * Conversion - Measure banner conversion.
 * Impressions - Count banner impressions.
+* Cloud - Serve banners from a cloud storage
+* Ad Sense - Support for AdSense Campaigns
+* Responsive - Select and serve banner according to device screen size
 * Ad Server - Build an ad server connected with several client simultaneously.
 
 **Plugin Site**
 
 * [Plugin Site](http://ad-changer.cminds.com/)
+* [Plugin Demo](http://ad-changer.cminds.com/demo)
+* [Plugin User Guide](http://ad-changer.cminds.com/guide)
+
 
 **Features**
 
@@ -55,6 +55,9 @@ Measure conversion and count impressions of your banners, use short code to inse
 
 The CM Ad Changer Pro version Includes all the free version features with the addition of the following features:
 
+* AdSense - Support Google AdSense Campaigns.
+* Cloud Storage -  Serve banners from any cloud storage like Amazon S3.
+* Advertiser Categories - Organize campaigns and statistics by advertiser 
 * Responsive Banners - support adaptive banner size based on browser screen size. Support mobile devices while service the correct banner size [View First Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac2.png), [View Second Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac6.png)
 * Notifications - Campaign manager will receive notifications to his email when campaign stops [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac4.png)
 * Rotating Banners - Support rotating banners [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac6.png)
