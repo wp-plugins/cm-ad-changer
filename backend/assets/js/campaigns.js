@@ -41,7 +41,7 @@ var CM_AdsChanger = {};
     $(document).ready(function () {
 
         $('#new_campaign_button').click(function () {
-            document.location.href = base_url + '/wp-admin/admin.php?page=ac_server_campaigns&acs_admin_action=new_campaign';
+            document.location.href = base_url + '/wp-admin/admin.php?page=cmac_campaigns&acs_admin_action=new_campaign';
         });
 
         // uploader start
@@ -127,7 +127,7 @@ var CM_AdsChanger = {};
                 html += '<div class="clicks">0</div>';
                 html += '<div class="percent">0</div>';
                 html += '</div>';
-                html += '<img src="' + plugin_url + '/assets/images/close.png' + '" class="delete_button" />';
+                html += '<img src="' + plugin_url + 'backend/assets/css/images/close.png' + '" class="delete_button" />';
                 html += '</div>';
 
                 $('#filelist').prepend(html);
@@ -177,7 +177,7 @@ var CM_AdsChanger = {};
                 $('.categories').empty();
             }
 
-            $('.categories').append('<div class="category_row"><!--<input type="checkbox" aria-required="true" name="categories[]" value="" />&nbsp;' + "\n" + '--><input type="text" name="category_title[]" />' + "\n" + '<!--<input type="hidden" name="category_ids[]" value="" />' + "\n" + '--><a href="#" class="delete_link"><img src="' + plugin_url + '/assets/images/close.png' + '" /></a></div>');
+            $('.categories').append('<div class="category_row"><!--<input type="checkbox" aria-required="true" name="categories[]" value="" />&nbsp;' + "\n" + '--><input type="text" name="category_title[]" />' + "\n" + '<!--<input type="hidden" name="category_ids[]" value="" />' + "\n" + '--><a href="#" class="delete_link"><img src="' + plugin_url + 'backend/assets/css/images/close.png' + '" /></a></div>');
 
             $('.categories .delete_link').eq(-1).bind('click', function (e) {
                 e.preventDefault();
@@ -227,7 +227,7 @@ var CM_AdsChanger = {};
             html += '<input type="text" name="date_till[]" class="date" />&nbsp;';
             html += '<input class="h_spinner ac_spinner" name="hours_to[]" value="0" />&nbsp;h&nbsp;';
             html += '<input class="m_spinner ac_spinner" name="mins_to[]" value="0" />&nbsp;m&nbsp;';
-            html += '<a href="#" class="delete_link"><img src="' + plugin_url + '/assets/images/close.png' + '" /></a>';
+            html += '<a href="#" class="delete_link"><img src="' + plugin_url + 'backend/assets/css/images/close.png' + '" /></a>';
             html += '</div>';
             $('#dates').append(html);
             $('#dates .date_range_row').eq(-1).find('input[type="text"]').datepick();

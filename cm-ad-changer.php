@@ -3,7 +3,7 @@
   Plugin Name: CM Ad Changer
   Plugin URI: http://ad-changer.cminds.com/
   Description: Ad Changer. Manage, Track and Report Advertising Campaigns on your site
-  Version: 1.2.5
+  Version: 1.2.6
   Author: CreativeMindsSolutions
   Author URI: http://plugins.cminds.com/
  */
@@ -27,6 +27,7 @@ class CMAdChanger
 {
     public static $calledClassName;
     protected static $instance = NULL;
+    public static $message = '';
 
     /**
      * Main Instance
@@ -208,7 +209,7 @@ class CMAdChanger
         global $wpdb;
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 
-        $wpdb->query('CREATE TABLE IF NOT EXISTS ' . $wpdb->prefix . CMAC_CAMPAIGNS_TABLE . ' (
+        $sql = 'CREATE TABLE IF NOT EXISTS ' . $wpdb->prefix . CMAC_CAMPAIGNS_TABLE . ' (
 				  campaign_id int(11) NOT NULL AUTO_INCREMENT,
 				  title varchar(100) NOT NULL,
 				  link varchar(200) NOT NULL,
@@ -222,9 +223,9 @@ class CMAdChanger
 				  status tinyint(4) NOT NULL,
 				  send_notifications tinyint(4) NOT NULL,
 				  PRIMARY KEY  (campaign_id)
-				) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;');
-
-        $wpdb->query('CREATE TABLE IF NOT EXISTS ' . $wpdb->prefix . CMAC_IMAGES_TABLE . ' (
+				) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
+        dbDelta($sql);
+        $sql = 'CREATE TABLE IF NOT EXISTS ' . $wpdb->prefix . CMAC_IMAGES_TABLE . ' (
 				  image_id int(11) NOT NULL AUTO_INCREMENT,
 				  campaign_id int(11) NOT NULL,
 				  parent_image_id int(11) NOT NULL DEFAULT "0",
@@ -235,8 +236,8 @@ class CMAdChanger
 				  weight tinyint(4) NOT NULL DEFAULT "0",
 				  filename varchar(50) NOT NULL DEFAULT "",
 				  PRIMARY KEY  (image_id)
-				) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;');
-
+				) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;';
+        dbDelta($sql);
 
         self::__createUploadsDir();
         self::__resetOptions();
@@ -244,11 +245,12 @@ class CMAdChanger
 
     private static function __createUploadsDir()
     {
+        add_action('admin_notices', array(self::$calledClassName, 'showErrorMessage'));
+
         $uploadDir = wp_upload_dir();
-        if( isset($uploadDir['error']) )
+        if( isset($uploadDir['error']) && !empty($uploadDir['error']) )
         {
-            $message = 'Error: ' . $uploadDir['error'];
-            cminds_show_message($message, true);
+            self::$message = 'Error: ' . $uploadDir['error'];
             return;
         }
 
@@ -259,16 +261,23 @@ class CMAdChanger
         {
             if( !wp_mkdir_p($tmpDir) )
             {
-                $message = 'Error: Your WP uploads folder is not writable! The plugin requires a writable uploads folder in order to work.';
-                cminds_show_message($message, true);
+                self::$message = 'Error: Your WP uploads folder is not writable! The plugin requires a writable uploads folder in order to work.';
                 return;
             }
         }
     }
 
+    public static function showErrorMessage()
+    {
+        if( !empty(self::$message) )
+        {
+            cminds_show_message(self::$message, true);
+        }
+    }
+
     private static function __resetOptions()
     {
-
+        return;
     }
 
     public static function _uninstall()

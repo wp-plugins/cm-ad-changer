@@ -63,11 +63,6 @@ class CMAC_Data
         }
         $campaigns = $wpdb->get_results('SELECT * FROM ' . self::$campaignsTable);
 
-        if( $campaigns && count($campaigns) >= (int) get_option('acs_max_campaigns_no', CMAC_CAMPAIGNS_LIMIT) )
-        {
-            $errors[] = 'Campaigns limit achieved(' . get_option('acs_max_campaigns_no', CMAC_CAMPAIGNS_LIMIT) . ')';
-        }
-
         if( empty($data['title']) )
         {
             $errors[] = 'Campaign Name field is empty';
@@ -250,31 +245,7 @@ class CMAC_Data
     {
         $errors = array();
 
-        if( empty($data['acs_max_campaigns_no']) )
-        {
-            $errors[] = 'Maximum Number of Campaigns is not set';
-        }
-
-        if( !is_numeric($data['acs_max_campaigns_no']) )
-        {
-            $errors[] = 'Please specify valid Maximal Number of Campaigns';
-        }
-
-        if( (int) $data['acs_max_campaigns_no'] > CMAC_CAMPAIGNS_LIMIT )
-        {
-            $errors[] = 'Maximal Number of Campaigns must be less than ' . CMAC_CAMPAIGNS_LIMIT;
-        }
-
-        if( is_numeric($data['acs_max_campaigns_no']) && (int) $data['acs_max_campaigns_no'] < 1 )
-        {
-            $errors[] = 'Maximal Number of Campaigns must be greater than 1';
-        }
-
         $campaigns = self::cmac_get_campaigns();
-        if( count($campaigns) > $data['acs_max_campaigns_no'] )
-        {
-            $errors[] = 'Number of Campaigns in database is greater than specified Maximal Number of Campaigns';
-        }
 
         if( !empty($errors) )
         {
@@ -288,18 +259,6 @@ class CMAC_Data
         else
         {
             update_option('acs_active', 0);
-        }
-
-        if( isset($_POST['acs_max_campaigns_no']) )
-        {
-            if( get_option('acs_max_campaigns_no') !== false )
-            {
-                update_option('acs_max_campaigns_no', $_POST['acs_max_campaigns_no']);
-            }
-            else
-            {
-                add_option('acs_max_campaigns_no', $_POST['acs_max_campaigns_no']);
-            }
         }
 
         if( isset($_POST['acc_campaign_id']) )
@@ -463,9 +422,7 @@ class CMAC_Data
         }
 
         $wpdb->query('DELETE FROM ' . self::$campaignsTable . ' WHERE `campaign_id`="' . $campaign_id . '"');
-        $wpdb->query('DELETE FROM ' . CAMPAIGN_CATEGORIES_REL_TABLE . ' WHERE `campaign_id`="' . $campaign_id . '"');
         $wpdb->query('DELETE FROM ' . self::$imagesTable . ' WHERE `campaign_id`="' . $campaign_id . '"');
-        $wpdb->query('DELETE FROM ' . PERIODS_TABLE . ' WHERE `campaign_id`="' . $campaign_id . '"');
     }
 
     /**

@@ -13,7 +13,7 @@
 
 <div class="acs-shortcode-reference clear">
     <p>To insert the ads into a page or post use following shortcode: [cm_ad_changer]. Here is the list of parameters: <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a></p>
-    <ul style="list-style-type: disc; margin-left: 20px;">
+    <ul style="list-style-type: disc; margin-left: 20px; display: none;">
         <li>
             <strong>campaign_id</strong> - ID of a campaign (required)
         </li>
@@ -52,15 +52,6 @@
                         <div style="clear:both;height:20px;"></div>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <label class="ac-form-label" for="acs_max_campaigns_no" >Max Number of Campaigns</label>
-                        <div class="field_help" title="<?php echo CMAdChangerShared::$labels['acs_max_campaigns_no'] ?>"></div>
-                    </td>
-                    <td>
-                        <input type="text" name="acs_max_campaigns_no" id="acs_max_campaigns_no" value="<?php echo $fields_data['acs_max_campaigns_no'] ?>" size=1 />
-                    </td>
-                </tr>
             </table>
             <table cellspacing=3 cellpadding=0 border=0 id="cutom_css_settings">
                 <tr>
@@ -79,43 +70,53 @@
                 <div class='block'>
                     <h3>Server Information</h3>
                     <?php
-                    if( ini_get('safe_mode') ) $safe_mode = 'On';
-                    else $safe_mode = 'Off';
+                    $safe_mode = ini_get('safe_mode') ? ini_get('safe_mode') : 'Off';
+                    $upload_max = ini_get('upload_max_filesize') ? ini_get('upload_max_filesize') : 'N/A';
+                    $post_max = ini_get('post_max_size') ? ini_get('post_max_size') : 'N/A';
+                    $memory_limit = ini_get('memory_limit') ? ini_get('memory_limit') : 'N/A';
+                    $cURL = function_exists('curl_version') ? 'On' : 'Off';
 
-                    if( !($upload_max = ini_get('upload_max_filesize')) ) $upload_max = 'N/A';
-
-                    if( !($post_max = ini_get('post_max_size')) ) $post_max = 'N/A';
-
-                    if( !($memory_limit = ini_get('memory_limit')) ) $memory_limit = 'N/A';
-
-                    if( !($cURL = function_exists('curl_version')) ) $cURL = 'Off';
-                    else $cURL = 'On';
-
-
-                    $php_info = cminds_parse_php_info();
+                    $php_info = CMDM::parse_php_info();
                     ?>
-                    <span class="description" style="">
-                        CM Ad Changer is a mix of a JavaScript application and a parsing engine.
-                        This information is useful to check if the CM Ad Changer might have some incompatibilities with your server. Make sure GD support is enabled.
-                    </span>
-                    <table class="form-table">
+                    <span class="description">This information is useful to check if plugin might have some incompabilities with you server.</span>
+                    <table class="form-table server-info-table">
                         <tr>
-                            <td>PHP Version</td><td><?php echo phpversion(); ?></td>
+                            <td>PHP Version</td>
+                            <td><?php echo phpversion(); ?></td>
+                            <td><?php if( version_compare(phpversion(), '5.3.0', '<') ): ?><strong>Recommended 5.3 or higher</strong><?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>
                         <tr>
-                            <td>PHP Safe Mode</td><td><?php echo $safe_mode; ?> (Should be Off)</td>
+                            <td>PHP Safe Mode</td>
+                            <td><?php echo $safe_mode; ?></td>
+                            <td><?php if( version_compare(phpversion(), '5.3.0', '<') ): ?><strong>Safe mode is deprecated</strong><?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>
                         <tr>
-                            <td>PHP Max Upload Size</td><td><?php echo $upload_max; ?></td>
+                            <td>PHP Max Upload Size</td>
+                            <td><?php echo $upload_max; ?></td>
+                            <td><?php if( CMDM_GroupDownloadPage::units2bytes($upload_max) < 1024 * 1024 * 5 ): ?>
+                                    <strong>This value can be too lower to upload large files.</strong>
+                                <?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>
                         <tr>
-                            <td>PHP Max Post Size</td><td><?php echo $post_max; ?></td>
+                            <td>PHP Max Post Size</td>
+                            <td><?php echo $post_max; ?></td>
+                            <td><?php if( CMDM_GroupDownloadPage::units2bytes($post_max) < 1024 * 1024 * 2 ): ?>
+                                    <strong>This value can be too lower to upload large files.</strong>
+                                <?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>
                         <tr>
-                            <td>PHP Memory Limit</td><td><?php echo $memory_limit; ?></td>
+                            <td>PHP Memory Limit</td>
+                            <td><?php echo $memory_limit; ?></td>
+                            <td><?php if( CMDM_GroupDownloadPage::units2bytes($memory_limit) < 1024 * 1024 * 128 ): ?>
+                                    <strong>This value can be too lower to Wordpress with plugins work properly.</strong>
+                                <?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>
                         <tr>
-                            <td>PHP cURL</td><td><?php echo $cURL; ?> (Should be On)</td>
+                            <td>PHP cURL</td>
+                            <td><?php echo $cURL; ?></td>
+                            <td><?php if( $cURL == 'Off' ): ?>
+                                    <strong>cURL library is required to use the Social Login.</strong>
+                                <?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>
 
                         <?php
@@ -133,8 +134,19 @@
                                     }
                                     else
                                     {
+                                        $val = true;
                                         echo '<td>enabled</td>';
                                     }
+
+                                    echo '<td>';
+                                    switch($key)
+                                    {
+                                        case 'GD Support':
+                                            if( $val === true ) echo '<span>OK</span>';
+                                            else echo '<strong>Required to display screenshots.</strong>';
+                                            break;
+                                    }
+                                    echo '</td>';
                                     echo '</tr>';
                                 }
                             }

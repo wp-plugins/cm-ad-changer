@@ -47,6 +47,9 @@ class CMAdChangerBackend
 
         add_action('wp_ajax_cmac_event_dispatcher', array(self::$calledClassName, 'cmac_event_dispatcher'));
         add_action('wp_ajax_nopriv_cmac_event_dispatcher', array(self::$calledClassName, 'cmac_event_dispatcher'));
+
+        add_action('wp_ajax_ac_upload_image', array(self::$calledClassName, 'cmac_upload_image'));
+        add_action('wp_ajax_nopriv_ac_upload_image', array(self::$calledClassName, 'cmac_upload_image'));
     }
 
     /**
@@ -62,7 +65,7 @@ class CMAdChangerBackend
 
         $php_info = cminds_parse_php_info();
 
-        if( (!isset($php_info['gd']) || !is_array($php_info['gd'])) && $ac_page != 'ac_server_about' )
+        if( (!isset($php_info['gd']) || !is_array($php_info['gd'])) && $ac_page != 'cmac_about' )
         {
             self::$errors[] = 'GD library is not installed! Please install this module to use Ad Changer Server';
         }
@@ -207,7 +210,6 @@ class CMAdChangerBackend
             else
             {
                 $fields_data['acs_active'] = $_POST['acs_active'];
-                $fields_data['acs_max_campaigns_no'] = $_POST['acs_max_campaigns_no'];
                 $fields_data['acs_div_wrapper'] = $_POST['acs_div_wrapper'];
                 $fields_data['acs_class_name'] = $_POST['acs_class_name'];
                 $fields_data['acs_custom_css'] = $_POST['acs_custom_css'];
@@ -218,7 +220,6 @@ class CMAdChangerBackend
         else
         {
             $fields_data['acs_active'] = get_option('acs_active', null);
-            $fields_data['acs_max_campaigns_no'] = get_option('acs_max_campaigns_no', '10');
             $fields_data['acs_div_wrapper'] = get_option('acs_div_wrapper', '0');
             $fields_data['acs_class_name'] = get_option('acs_class_name', '');
             $fields_data['acs_custom_css'] = get_option('acs_custom_css', '');
@@ -358,6 +359,54 @@ class CMAdChangerBackend
 
         $result = CMAC_Data::cmac_event_save($args);
         return $result;
+    }
+
+    /**
+     * Uploading the images to tmp folder
+     */
+    public static function cmac_upload_image()
+    {
+        $uploadedfile = $_FILES['file'];
+        $upload_overrides = array('test_form' => false);
+
+        $validate = wp_check_filetype_and_ext($uploadedfile['tmp_name'], $uploadedfile['name'], array('jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'png' => 'image/png', 'gif' => 'image/gif'));
+
+        if( !$validate['ext'] )
+        {
+            die(__('Error: Invalid file extension!'));
+        }
+
+        if( (int) $uploadedfile['size'] > 2000000 )
+        {
+            die(__('Error: File too big!'));
+        }
+
+        $uploadDir = wp_upload_dir();
+        $baseDir = $uploadDir['basedir'] . '/' . CMAC_UPLOAD_PATH;
+        $tmpDir = $baseDir . CMAC_TMP_UPLOAD_PATH;
+
+        if( ($handle = opendir($baseDir)) !== FALSE )
+        {
+            $existing_files = array();
+            while(false !== ($entry = readdir($handle)))
+            {
+                $existing_files[] = $entry;
+            }
+
+            do
+            {
+                $new_filename = rand(1000000, 9999999) . '.' . $validate['ext'];
+            }
+            while(in_array($new_filename, $existing_files));
+            move_uploaded_file($uploadedfile['tmp_name'], $tmpDir . $new_filename);
+
+            echo $new_filename;
+        }
+        else
+        {
+            die(__('Error: Could not open the uploads folder! Please ensure the WP uploads folder is present and writable!'));
+        }
+        exit;
     }
 
 }
