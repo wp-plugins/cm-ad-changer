@@ -18,6 +18,15 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 [youtube http://www.youtube.com/watch?v=rBGl2ENV5Fc]
 
+> #### Plugin Site
+>
+> * [Plugin Site](http://ad-changer.cminds.com/)
+>
+> #### Demo & User Guide
+>
+> * [Plugin Demo](http://ad-changer.cminds.com/demo)
+> * [Plugin User Guide](http://ad-changer.cminds.com/guide)
+
 **Use-Cases**
 
 * Banners Management - Manage banners within your site.
@@ -30,14 +39,8 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 * Responsive - Select and serve banner according to device screen size
 * Ad Server - Build an ad server connected with several client simultaneously.
 
-**Plugin Site**
 
-* [Plugin Site](http://ad-changer.cminds.com/)
-* [Plugin Demo](http://ad-changer.cminds.com/demo)
-* [Plugin User Guide](http://ad-changer.cminds.com/guide)
-
-
-**Features**
+**Basic Features**
 
 * Includes impression &amp; clicks count per each banner [view image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/image-a1.png)
 * Each campaign can serve banners randomly or selectively.
@@ -49,26 +52,26 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 * Can run several campaigns simultaneously [view image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/image2.png)
 * Each campaign can manage unlimited number of images / banners.
 
-**Pro Version Features**
-
-[Pro Version](http://ad-changer.cminds.com/)
-
-The CM Ad Changer Pro version Includes all the free version features with the addition of the following features:
-
-* AdSense - Support Google AdSense Campaigns.
-* Cloud Storage -  Serve banners from any cloud storage like Amazon S3.
-* Advertiser Categories - Organize campaigns and statistics by advertiser 
-* Responsive Banners - support adaptive banner size based on browser screen size. Support mobile devices while service the correct banner size [View First Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac2.png), [View Second Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac6.png)
-* Notifications - Campaign manager will receive notifications to his email when campaign stops [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac4.png)
-* Rotating Banners - Support rotating banners [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac6.png)
-* Client Plugin - Includes a client plugin which can be installed on a remote WP installation and serve campaign banners from the CM Ad Changer Server. Each server can serve many clients simultaneously [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac92.png)
-* Statistics - Include several statistics and access log modules. Log can be downloaded in csv format. Statistics reports can be shown by month. Statistics also include geo location information by country name. [View first Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac8.png), [View second Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac9.png), [View third Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac91.png)
-* Restrict by Dates - Campaign can be restricted based on dates [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac7.png)
-* Restrict by Days - Campaign can be restricted based on days in the week [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac7.png)
-* Restrict by Domains - Campaign can be restricted based on client domains (which Ad Changer clients will be served or not per a specific campaign) [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac5.png)
-* Restrict by Clicks - Campaign can be restricted when it reaches a max amount of clicks [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac5.png)
-* Restrict by Impressions - Campaign can be restricted when it reaches a max amount of Impressions [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac5.png)
-* Custom JS - JS function can be added per campaign and executed once banner is clicked [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac5.png)
+> #### Pro Version Features
+>
+> [Pro Version](http://ad-changer.cminds.com/)
+>
+> The CM Ad Changer Pro version Includes all the free version features with the addition of the following features:
+>
+> * AdSense - Support Google AdSense Campaigns.
+> * Cloud Storage -  Serve banners from any cloud storage like Amazon S3.
+> * Advertiser Categories - Organize campaigns and statistics by advertiser 
+> * Responsive Banners - support adaptive banner size based on browser screen size. Support mobile devices while service the correct banner size [View First Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac2.png), [View Second Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac6.png)
+> * Notifications - Campaign manager will receive notifications to his email when campaign stops [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac4.png)
+> * Rotating Banners - Support rotating banners [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac6.png)
+> * Client Plugin - Includes a client plugin which can be installed on a remote WP installation and serve campaign banners from the CM Ad Changer Server. Each server can serve many clients simultaneously [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac92.png)
+> * Statistics - Include several statistics and access log modules. Log can be downloaded in csv format. Statistics reports can be shown by month. Statistics also include geo location information by country name. [View first Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac8.png), [View second Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac9.png), [View third Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac91.png)
+> * Restrict by Dates - Campaign can be restricted based on dates [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac7.png)
+> * Restrict by Days - Campaign can be restricted based on days in the week [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac7.png)
+> * Restrict by Domains - Campaign can be restricted based on client domains (which Ad Changer clients will be served or not per a specific campaign) [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac5.png)
+> * Restrict by Clicks - Campaign can be restricted when it reaches a max amount of clicks [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac5.png)
+> * Restrict by Impressions - Campaign can be restricted when it reaches a max amount of Impressions [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac5.png)
+> * Custom JS - JS function can be added per campaign and executed once banner is clicked [View Image](http://ad-changer.cminds.com/wp-content/uploads/ad-changer/ac5.png)
 
 **More Plugins by CreativeMinds**
 
