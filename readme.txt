@@ -18,14 +18,27 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 [youtube http://www.youtube.com/watch?v=rBGl2ENV5Fc]
 
+---
+ 
+
 > #### Plugin Site
->
 > * [Plugin Site](http://ad-changer.cminds.com/)
->
+> * [Pro Version Detailed Feature List](http://ad-changer.cminds.com/features)
+
+---
+ 
+
 > #### Demo & User Guide
->
 > * [Plugin Demo](http://ad-changer.cminds.com/demo)
 > * [Plugin User Guide](http://ad-changer.cminds.com/guide)
+
+---
+ 
+> #### Follow Us
+> [Blog](http://plugin.cminds.com/blog/) | [Twitter](http://twitter.com/cmplugins)  | [Google+](https://plus.google.com/108513627228464018583/) | [LinkedIn](https://www.linkedin.com/company/creativeminds) | [YouTube](https://www.youtube.com/user/cmindschannel) | [Pinterest](http://www.pinterest.com/cmplugins/)
+
+---
+
 
 **Use-Cases**
 
@@ -54,9 +67,8 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 > #### Pro Version Features
 >
-> [Pro Version](http://ad-changer.cminds.com/)
+> [Pro Version Detailed Feature List](http://ad-changer.cminds.com/features)
 >
-> The CM Ad Changer Pro version Includes all the free version features with the addition of the following features:
 >
 > * AdSense - Support Google AdSense Campaigns.
 > * Cloud Storage -  Serve banners from any cloud storage like Amazon S3.
