@@ -3,7 +3,7 @@
   Plugin Name: CM Ad Changer
   Plugin URI: http://ad-changer.cminds.com/
   Description: Ad Changer. Manage, Track and Report Advertising Campaigns on your site
-  Version: 1.2.6
+  Version: 1.2.7
   Author: CreativeMindsSolutions
   Author URI: http://plugins.cminds.com/
  */

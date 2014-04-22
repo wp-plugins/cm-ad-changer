@@ -76,7 +76,7 @@
                     $memory_limit = ini_get('memory_limit') ? ini_get('memory_limit') : 'N/A';
                     $cURL = function_exists('curl_version') ? 'On' : 'Off';
 
-                    $php_info = CMDM::parse_php_info();
+                    $php_info = cminds_parse_php_info();
                     ?>
                     <span class="description">This information is useful to check if plugin might have some incompabilities with you server.</span>
                     <table class="form-table server-info-table">
@@ -93,21 +93,21 @@
                         <tr>
                             <td>PHP Max Upload Size</td>
                             <td><?php echo $upload_max; ?></td>
-                            <td><?php if( CMDM_GroupDownloadPage::units2bytes($upload_max) < 1024 * 1024 * 5 ): ?>
+                            <td><?php if( cminds_units2bytes($upload_max) < 1024 * 1024 * 5 ): ?>
                                     <strong>This value can be too lower to upload large files.</strong>
                                 <?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>
                         <tr>
                             <td>PHP Max Post Size</td>
                             <td><?php echo $post_max; ?></td>
-                            <td><?php if( CMDM_GroupDownloadPage::units2bytes($post_max) < 1024 * 1024 * 2 ): ?>
+                            <td><?php if( cminds_units2bytes($post_max) < 1024 * 1024 * 2 ): ?>
                                     <strong>This value can be too lower to upload large files.</strong>
                                 <?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>
                         <tr>
                             <td>PHP Memory Limit</td>
                             <td><?php echo $memory_limit; ?></td>
-                            <td><?php if( CMDM_GroupDownloadPage::units2bytes($memory_limit) < 1024 * 1024 * 128 ): ?>
+                            <td><?php if( cminds_units2bytes($memory_limit) < 1024 * 1024 * 128 ): ?>
                                     <strong>This value can be too lower to Wordpress with plugins work properly.</strong>
                                 <?php else: ?><span>OK</span><?php endif; ?></td>
                         </tr>

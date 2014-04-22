@@ -329,3 +329,24 @@ if( !function_exists('cminds_format_list') )
     }
 
 }
+
+if( !function_exists('cminds_units2bytes') )
+{
+
+    /**
+     * Converts the Apache memory values to number of bytes ini_get('upload_max_filesize') or ini_get('post_max_size')
+     * @param type $str
+     * @return type
+     */
+    function cminds_units2bytes($str)
+    {
+        $units = array('B', 'K', 'M', 'G', 'T');
+        $unit = preg_replace('/[0-9]/', '', $str);
+        $unitFactor = array_search(strtoupper($unit), $units);
+        if( $unitFactor !== false )
+        {
+            return preg_replace('/[a-z]/i', '', $str) * pow(2, 10 * $unitFactor);
+        }
+    }
+
+}
