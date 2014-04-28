@@ -107,6 +107,7 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 >
 > [More FAQ's](http://ad-changer.cminds.com/faq)
+> [Detailed User Guide](http://ad-changer.cminds.com/ad-changer-user-guide)
 >
 
 = How can I add banners ? =
