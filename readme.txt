@@ -95,7 +95,6 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 == Installation ==
 
->
 > [Detailed User Guide](http://ad-changer.cminds.com/ad-changer-user-guide)
 >
 
@@ -105,7 +104,7 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 == Frequently Asked Questions ==
 
->
+
 > [More FAQ's](http://ad-changer.cminds.com/faq)
 > [Detailed User Guide](http://ad-changer.cminds.com/ad-changer-user-guide)
 >
@@ -126,6 +125,5 @@ Simply add a campaign and define upload banners. You can then insert a shortcode
 
 == Changelog ==
 
->
 > [View Release Notes in Ad Changer Plugin Site](http://ad-changer.cminds.com/cm-ad-changer-plugin-free-edition-release-notes/)
 >
