@@ -109,8 +109,6 @@ Simply add a campaign and define upload banners. You can then insert a shortcode
 
 == Screenshots ==
 
-[More Screen Shots](http://ad-changer.cminds.com/image-gallery/)
-
 1. Banners management
 2. Set dates when campaign is active
 3. Set active days
