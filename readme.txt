@@ -116,30 +116,5 @@ Simply add a campaign and define upload banners. You can then insert a shortcode
 
 
 == Changelog ==
-= 1.2.7 =
-* Fixed the error in the settings
 
-= 1.2.6 =
-* Fixed the bug with Campaign Creation
-* Fixed the bug with banner upload
-* Fixed the missing closing image
-
-= 1.2.5 =
-* Added the support for the multisite
-* Fixed some performance issues
-* Fixed the widget class
-* Fixed some bugs
-
-= 1.2.0 =
-* General code refactoring and fixes
-
-= 1.1.2 =
-* Settings tabified
-* Custom CSS class to widget added
-
-= 1.1.0 =
-* Replace get_bloginfo('url') with get_bloginfo('wpurl') for all relative paths
-
-= 1.0.0 =
-* Initial release
-
+[View Release Notes in Ad Changer Plugin Site](http://ad-changer.cminds.com/cm-ad-changer-plugin-free-edition-release-notes/)
