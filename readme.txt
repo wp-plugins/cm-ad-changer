@@ -95,7 +95,9 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 == Installation ==
 
-[Detailed User Guide](http://ad-changer.cminds.com/ad-changer-user-guide)
+>
+> [Detailed User Guide](http://ad-changer.cminds.com/ad-changer-user-guide)
+>
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
@@ -103,7 +105,9 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 == Frequently Asked Questions ==
 
-[More FAQ's](http://ad-changer.cminds.com/faq)
+>
+> [More FAQ's](http://ad-changer.cminds.com/faq)
+>
 
 = How can I add banners ? =
 
@@ -121,4 +125,6 @@ Simply add a campaign and define upload banners. You can then insert a shortcode
 
 == Changelog ==
 
-[View Release Notes in Ad Changer Plugin Site](http://ad-changer.cminds.com/cm-ad-changer-plugin-free-edition-release-notes/)
+>
+> [View Release Notes in Ad Changer Plugin Site](http://ad-changer.cminds.com/cm-ad-changer-plugin-free-edition-release-notes/)
+>
