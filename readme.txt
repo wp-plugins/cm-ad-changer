@@ -101,6 +101,8 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 
 == Frequently Asked Questions ==
 
+[More FAQ's](http://ad-changer.cminds.com/faq)
+
 = How can I add banners ? =
 
 Simply add a campaign and define upload banners. You can then insert a shortcode into theme or any post or page and banner will be show as defined in the campaign parameters .
