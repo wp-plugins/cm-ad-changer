@@ -4,7 +4,7 @@ Contributors: CreativeMindsSolutions
 Donate link: http://ad-changer.cminds.com/
 Tags: ad,ad,ad network,adbrite,adroll,ads,ads manager,adsense,adserver,advertisement,advertising,ajax,banner,banner ad,banner changer,banner manager,banner rotator,banners,carousel,click,click counter,clicks,commission,geo location,geolocation,google,image,image rotate,Impression,Impressions,income,inject,injection,insert,junction,manager,media,monetise,monetize,money,notification,notifications,promotion,promotions,random,referral,report,reporting,reports,responsive,responsive banner,revenue,rotate,rotating,rotator,seo,server,slider,statistics,stats,track,tracking,variation,variations,ypn,cloud,cloud storage
 Requires at least: 3.4
-Tested up to: 3.9.0
+Tested up to: 3.9.1
 Stable tag: 1.2.7
 
 Manage, Track and Report the Advertising Campaigns and Banners on Your Site. Turn your WP into an Ad Server!
@@ -116,11 +116,17 @@ Simply add a campaign and define upload banners. You can then insert a shortcode
 
 == Screenshots ==
 
-1. Banners management
-2. Set dates when campaign is active
-3. Set active days
-4. Plugin settings
-5. Campaigns manager
+1. Campaigns Management Screen
+2. Update Campaign Settings
+3. Update Banners in the Campaign 
+4. Update Dates When Campaign is Active
+5. Update Days in the Week When Campaign is Active
+6. Ad Server Log
+7. Ad Server Statistics
+8. Plugin's Settings
+9. HTML Banners
+10. Ad-Sense Campaigns
+
 
 
 
