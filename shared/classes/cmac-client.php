@@ -52,6 +52,7 @@ class CMAC_Client
             'debug'         => 0,
             'wrapper'       => 0,
             'class'         => '',
+            'target_blank'  => '1'
                 ), $args, 'cm_ad_changer');
 
 
@@ -64,8 +65,8 @@ class CMAC_Client
             'campaign_id' => $args['campaign_id']
         );
 
+        $target = (isset($args['target_blank']) && !empty($args['target_blank'])) ? 'target="_blank"' : '';
         $filteredParams = apply_filters('cmac_get_banner_params', $params);
-
         $banner = CMAC_Data::cmac_get_banner($filteredParams);
 
         if( isset($args['debug']) && $args['debug'] == 1 )
@@ -119,7 +120,7 @@ class CMAC_Client
                 }
 
                 $img_html .= '<img src="' . $banner['image'] . '"' . $alt . $title . $bannerSizeHtml . ' />';
-                $ret_html .= '<a ' . $dataHtml . ' href="' . $banner['banner_link'] . '" target="_blank" class="acc_banner_link ' . (!is_null($css_class) ? $css_class : '') . '">' . $img_html . '</a>';
+                $ret_html .= '<a ' . $dataHtml . ' href="' . $banner['banner_link'] . '" '.$target.' class="acc_banner_link ' . (!is_null($css_class) ? $css_class : '') . '">' . $img_html . '</a>';
             }
             else
             {
