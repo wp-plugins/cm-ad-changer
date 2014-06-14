@@ -73,8 +73,8 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 > [Pro Version Detailed Feature List](http://ad-changer.cminds.com/features)
 >
 >
-> * HTML Campaigns – Campaigns can display custom HTML content / Ads (set by WYSIWYG editor)
-> * Video Campaigns – Campaigns can display Video content takes from video networks or set by user
+> * HTML Campaigns - Campaigns can display custom HTML content / Ads (set by WYSIWYG editor)
+> * Video Campaigns - Campaigns can display Video content takes from video networks or set by user
 > * Campaign Groups - Campaigns can now be grouped so you can display the Image/HTML/AdSense Campaigns with one shortcode! Campaign Groups Guide.
 > * AdSense - Support Google AdSense Campaigns.
 > * Cloud Storage -  Serve banners from any cloud storage like Amazon S3.
