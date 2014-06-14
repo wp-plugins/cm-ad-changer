@@ -172,6 +172,10 @@ class CMAdChangerBackend
                     {
                         case 'edit':
                             $fields_data = CMAC_Data::cmac_get_campaign($_GET['campaign_id']);
+                            if(isset($_GET['saved']) && $_GET['saved'] == '1')
+                            {
+                                self::$success = 'Campaign was successfully stored!';
+                            }
                             break;
                         case 'delete':
                             CMAC_Data::cmac_remove_campaign($_GET['campaign_id']);

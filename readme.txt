@@ -5,7 +5,7 @@ Donate link: http://ad-changer.cminds.com/
 Tags: ad,ad,ad network,adbrite,adroll,ads,ads manager,adsense,adserver,advertisement,advertising,ajax,banner,banner ad,banner changer,banner manager,banner rotator,banners,carousel,click,click counter,clicks,commission,geo location,geolocation,google,image,image rotate,Impression,Impressions,income,inject,injection,insert,junction,manager,media,monetise,monetize,money,notification,notifications,promotion,promotions,random,referral,report,reporting,reports,responsive,responsive banner,revenue,rotate,rotating,rotator,seo,server,slider,statistics,stats,track,tracking,variation,variations,ypn,cloud,cloud storage
 Requires at least: 3.4
 Tested up to: 3.9.1
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 
 Manage, Track and Report the Advertising Campaigns and Banners on Your Site. Turn your WP into an Ad Server!
 
@@ -52,6 +52,8 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 * Ad Sense - Support for AdSense Campaigns
 * Responsive - Select and serve banner according to device screen size
 * Ad Server - Build an ad server connected with several client simultaneously.
+* HTML / Text Ads - Support HTML / Text Ads and campaigns.
+* Video - Support Video based Ads and campaigns.
 
 
 **Basic Features**
@@ -71,6 +73,9 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 > [Pro Version Detailed Feature List](http://ad-changer.cminds.com/features)
 >
 >
+> * HTML Campaigns – Campaigns can display custom HTML content / Ads (set by WYSIWYG editor)
+> * Video Campaigns – Campaigns can display Video content takes from video networks or set by user
+> * Campaign Groups - Campaigns can now be grouped so you can display the Image/HTML/AdSense Campaigns with one shortcode! Campaign Groups Guide.
 > * AdSense - Support Google AdSense Campaigns.
 > * Cloud Storage -  Serve banners from any cloud storage like Amazon S3.
 > * Advertiser Categories - Organize campaigns and statistics by advertiser 

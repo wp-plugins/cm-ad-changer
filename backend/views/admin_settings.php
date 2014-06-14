@@ -7,7 +7,7 @@
  */
 ?>
 
-<script>
+<script type="text/javascript">
     plugin_url = '<?php echo CMAC_PLUGIN_URL ?>';
 </script>
 

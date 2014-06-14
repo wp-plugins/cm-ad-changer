@@ -2,7 +2,7 @@
 (function ($) {
 
     $(document).ready(function () {
-        $('.acc_banner_link').on("click", function () {
+        $('.acc_banner_link').on("mousedown", function () {
             var data, $this;
             $this = $(this);
             data = {

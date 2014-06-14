@@ -7,7 +7,7 @@
  */
 ?>
 
-<script>
+<script type="text/javascript">
     var base_url = '<?php echo get_bloginfo('wpurl') ?>';
     var plugin_url = '<?php echo CMAC_PLUGIN_URL ?>';
     var upload_tmp_path = '<?php echo get_bloginfo('wpurl') . '/wp-content/uploads/' . CMAC_UPLOAD_PATH . CMAC_TMP_UPLOAD_PATH; ?>';
@@ -191,7 +191,7 @@
 
                                     if( isset($fields_data['selected_banner_file']) && !empty($fields_data['selected_banner_file']) )
                                     {
-                                        echo '<script>
+                                        echo '<script type="text/javascript">
 											jQuery(document).ready(function(){
 												CM_AdsChanger.check_banner(jQuery(\'#filelist input[type="hidden"][value="' . $fields_data['selected_banner_file'] . '"]\').parent());
 											})
