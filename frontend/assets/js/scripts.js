@@ -13,7 +13,10 @@
                 banner_id: $this.data("banner_id")
             };
 
-            $.post(window.cmac_data.ajaxurl, data, function (response) {
+            $.ajax({url: window.cmac_data.ajaxurl,
+                type: "post",
+                async: false,
+                data: data}).done(function (response) {
                 if (response.error)
                 {
                     console.log(response);

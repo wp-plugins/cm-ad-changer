@@ -11,7 +11,7 @@
     plugin_url = '<?php echo CMAC_PLUGIN_URL ?>';
 </script>
 
-<div class="acs-shortcode-reference clear">
+<div class="acs-shortcode-reference clear acs-shortcode-reference clear cminds_settings_description">
     <p>To insert the ads into a page or post use following shortcode: [cm_ad_changer]. Here is the list of parameters: <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a></p>
     <ul style="list-style-type: disc; margin-left: 20px; display: none;">
         <li>
@@ -31,6 +31,14 @@
         </li>
     </ul>
 </div>
+
+<?php
+include plugin_dir_path(__FILE__) . '/call_to_action.phtml';
+?>
+
+<br/>
+<div class="clear"></div>
+
 <div class="ac-edit-form clear">
     <form id="acs_settings_form" method="post">
         <input type="hidden" name="action" value="acs_settings" />
