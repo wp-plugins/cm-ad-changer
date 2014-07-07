@@ -350,3 +350,46 @@ if( !function_exists('cminds_units2bytes') )
     }
 
 }
+
+if( !function_exists('cmac_get_upload_dir') )
+{
+
+    /**
+     * Returns the upload dir
+     * @return string
+     */
+    function cmac_get_upload_dir()
+    {
+        static $cmacUpladDir = null;
+
+        if( !$cmacUpladDir )
+        {
+            $uploadDir = wp_upload_dir();
+            $cmacUploadDir = $uploadDir['basedir'] . '/' . CMAC_UPLOAD_PATH;
+        }
+        return $cmacUploadDir;
+    }
+
+}
+
+if( !function_exists('cmac_get_upload_url') )
+{
+
+    /**
+     * Returns the upload url
+     * @return string
+     */
+    function cmac_get_upload_url()
+    {
+        static $cmacUpladDir = null;
+
+        if( !$cmacUpladDir )
+        {
+            $uploadDir = wp_upload_dir();
+            $cmacUploadDir = set_url_scheme($uploadDir['baseurl']) . '/' . CMAC_UPLOAD_PATH;
+        }
+        return $cmacUploadDir;
+    }
+
+}
+

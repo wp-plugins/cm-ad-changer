@@ -120,7 +120,7 @@ class CMAdChangerShared
             'title'                => 'Campaign Name. For internal use only',
             'campaign_id'          => 'Campaign ID. When referring to campaign in shortcode only use campaign id',
             'comment'              => 'Campaign Notes - This is only for internal use of campaign manager',
-            'link'                 => 'Campaign Target URL - Target URL specified in banner will override this',
+            'link'                 => 'Campaign Target URL - Target URL specified in banner will override this. WARNING: Clicks are counted only if it is set!',
             'status'               => 'Campaign Status - if set campaign will be active ',
             'max_impressions'      => 'Leave it 0 to remove limit or set to max number allowed',
             'max_clicks'           => 'Leave it 0 to remove limit or set to max number allowed',

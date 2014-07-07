@@ -165,7 +165,7 @@ class CMAC_Data
                 {
                     if( !in_array($deleted_filename, $data['banner_filename']) )
                     {
-                        if( file_exists(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . $deleted_filename) ) unlink(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . $deleted_filename);
+                        if( file_exists(cmac_get_upload_dir() . $deleted_filename) ) unlink(cmac_get_upload_dir() . $deleted_filename);
                     }
 
                     $wpdb->query('DELETE FROM ' . self::$imagesTable . ' WHERE `campaign_id`       ="' . $new_campaign_id . '" AND `filename`="' . $deleted_filename . '"');
@@ -182,11 +182,11 @@ class CMAC_Data
             {
                 if( in_array($data['banner_filename'][$banner_index], $new_filenames) )
                 {
-                    @$image_file_content = file_get_contents(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . CMAC_TMP_UPLOAD_PATH . $data['banner_filename'][$banner_index]);
+                    @$image_file_content = file_get_contents(cmac_get_upload_dir() . CMAC_TMP_UPLOAD_PATH . $data['banner_filename'][$banner_index]);
 
                     if( $image_file_content )
                     {
-                        $f = fopen(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . $data['banner_filename'][$banner_index], 'w+');
+                        $f = fopen(cmac_get_upload_dir() . $data['banner_filename'][$banner_index], 'w+');
                         fwrite($f, $image_file_content);
                         fclose($f);
                     }
@@ -211,13 +211,13 @@ class CMAC_Data
         /*
          * cleaning tmp folder
          */
-        if( $handle = opendir(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . CMAC_TMP_UPLOAD_PATH) )
+        if( $handle = opendir(cmac_get_upload_dir() . CMAC_TMP_UPLOAD_PATH) )
         {
             while(false !== ($entry = readdir($handle)))
             {
-                if( file_exists(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . CMAC_TMP_UPLOAD_PATH . $entry) && $entry != '.' && $entry != '..' )
+                if( file_exists(cmac_get_upload_dir() . CMAC_TMP_UPLOAD_PATH . $entry) && $entry != '.' && $entry != '..' )
                 {
-                    unlink(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . CMAC_TMP_UPLOAD_PATH . $entry);
+                    unlink(cmac_get_upload_dir() . CMAC_TMP_UPLOAD_PATH . $entry);
                 }
             }
         }
@@ -416,9 +416,9 @@ class CMAC_Data
 
         foreach($images as $image)
         {
-            if( file_exists(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . $image) )
+            if( file_exists(cmac_get_upload_dir() . $image) )
             {
-                unlink(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . $image);
+                unlink(cmac_get_upload_dir() . $image);
             }
         }
 
@@ -484,7 +484,7 @@ class CMAC_Data
         $selectedBannerInfo = self::cmac_get_selected_banner_info($campaign);
 
         $ret_array = $selectedBannerInfo;
-        $ret_array['image'] = get_bloginfo('wpurl') . '/wp-content/uploads/' . CMAC_UPLOAD_PATH . $selectedBannerInfo['filename'];
+        $ret_array['image'] = cmac_get_upload_url() . $selectedBannerInfo['filename'];
 
         if( !empty($selectedBannerInfo['link']) )
         {

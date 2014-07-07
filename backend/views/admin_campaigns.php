@@ -10,7 +10,7 @@
 <script type="text/javascript">
     var base_url = '<?php echo get_bloginfo('wpurl') ?>';
     var plugin_url = '<?php echo CMAC_PLUGIN_URL ?>';
-    var upload_tmp_path = '<?php echo get_bloginfo('wpurl') . '/wp-content/uploads/' . CMAC_UPLOAD_PATH . CMAC_TMP_UPLOAD_PATH; ?>';
+    var upload_tmp_path = '<?php echo cmac_get_upload_url() . CMAC_TMP_UPLOAD_PATH; ?>';
     var banners_limit = <?php echo CMAC_BANNERS_PER_CAMPAIGN_LIMIT; ?>;
     var next_banner_index = 0;
     var label_descriptions = new Object();
@@ -148,15 +148,15 @@
                                         }
 
                                         //if(@file_get_contents(get_bloginfo('wpurl') . '/wp-content/uploads/'.CMAC_UPLOAD_PATH.''.$banner_filename)){
-                                        if( file_exists(WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . $banner_filename) )
+                                        if( file_exists(cmac_get_upload_dir() . $banner_filename) )
                                         {
-                                            $filename = get_bloginfo('wpurl') . '/wp-content/uploads/' . CMAC_UPLOAD_PATH . $banner_filename;
-                                            $filename1 = WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . $banner_filename;
+                                            $filename = cmac_get_upload_url() . $banner_filename;
+                                            $filename1 = cmac_get_upload_dir() . $banner_filename;
                                         }
                                         else
                                         {
-                                            $filename = get_bloginfo('wpurl') . '/wp-content/uploads/' . CMAC_UPLOAD_PATH . CMAC_TMP_UPLOAD_PATH . '' . $banner_filename;
-                                            $filename1 = WP_CONTENT_DIR . '/uploads/' . CMAC_UPLOAD_PATH . CMAC_TMP_UPLOAD_PATH . $banner_filename;
+                                            $filename = cmac_get_upload_url() . CMAC_TMP_UPLOAD_PATH . '' . $banner_filename;
+                                            $filename1 = cmac_get_upload_dir() . CMAC_TMP_UPLOAD_PATH . $banner_filename;
                                         }
 
                                         // image info

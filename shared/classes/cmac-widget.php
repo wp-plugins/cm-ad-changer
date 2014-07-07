@@ -23,7 +23,9 @@ class ACWidget extends WP_Widget
         $widget_opts = array(
             'title'         => 'CM Ad Changer',
             'campaign_id'   => '0',
-            'linked_banner' => '1'
+            'linked_banner' => '1',
+            'description' => 'Display CM Ad Changer banner',
+            'classname' => 'CMAC_AdChangerWidget'
         );
         $this->WP_Widget('ACWidget', 'Ad Changer', $widget_opts);
     }
@@ -135,7 +137,6 @@ class ACWidget extends WP_Widget
         ?>
         <table cellpadding=2>
             <?php
-            wp_nonce_field(plugin_basename(__FILE__), 'ac_noncename');
             echo '<tr><td><label for="' . $this->get_field_id('title') . '">Title</label></td>';
             echo '<td><input type="text" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" value="' . (isset($instance['title']) ? $instance['title'] : '') . '" size=15  /></td></tr>';
 
