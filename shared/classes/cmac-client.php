@@ -65,7 +65,7 @@ class CMAC_Client
             'campaign_id' => $args['campaign_id']
         );
 
-        $target = (isset($args['target_blank']) && !empty($args['target_blank'])) ? 'target="_blank"' : '';
+        $target = (!empty($args['target_blank'])) ? 'target="_blank"' : '';
         $filteredParams = apply_filters('cmac_get_banner_params', $params);
         $banner = CMAC_Data::cmac_get_banner($filteredParams);
 

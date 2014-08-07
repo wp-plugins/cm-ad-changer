@@ -104,6 +104,12 @@ class CMAdChangerBackend
     public static function cmac_admin_menu()
     {
         global $submenu;
+        $current_user = wp_get_current_user();
+        if( !user_can($current_user, 'manage_options') )
+        {
+            return;
+        }
+
         $settings_page = add_menu_page(CMAC_NAME, CMAC_NAME, 'manage_options', CMAC_MENU_OPTION, array(self::$calledClassName, 'cmac_load_page'), self::$cssPath . 'images/cm-ad-changer-icon.png');
 
         $campaigns_subpage = add_submenu_page(CMAC_MENU_OPTION, 'Campaigns', 'Campaigns', 'manage_options', 'cmac_campaigns', array(self::$calledClassName, 'cmac_load_page'));
@@ -172,7 +178,7 @@ class CMAdChangerBackend
                     {
                         case 'edit':
                             $fields_data = CMAC_Data::cmac_get_campaign($_GET['campaign_id']);
-                            if(isset($_GET['saved']) && $_GET['saved'] == '1')
+                            if( isset($_GET['saved']) && $_GET['saved'] == '1' )
                             {
                                 self::$success = 'Campaign was successfully stored!';
                             }
