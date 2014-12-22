@@ -217,8 +217,12 @@ class CMAdChangerShared
         {
             return;
         }
-
-        $f = fopen(CMAC_PLUGIN_DIR . '/log.txt', 'a');
+        $file = CMAC_PLUGIN_DIR . 'log.txt';
+        if(!is_file($file)){
+            touch($file);
+            chmod($file, 0777);
+        }
+        $f = fopen($file, 'a');
         fwrite($f, date('Y-m-d H:i:s') . ': ' . $message . "\n");
         fclose($f);
     }

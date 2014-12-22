@@ -272,26 +272,27 @@ class CMAdChangerBackend
 
         if( $int_version > 320 )
         {
-            wp_enqueue_script('jqueryUIWPCore', includes_url() . 'js/jquery/ui/jquery.ui.core.min.js', array(), '1.0.0');
-            wp_enqueue_script('jqueryUIWPWidget', includes_url() . 'js/jquery/ui/jquery.ui.widget.min.js', array(), '1.0.0');
-            wp_enqueue_script('jqueryUIWPPosition', includes_url() . 'js/jquery/ui/jquery.ui.position.min.js', array(), '1.0.0');
-            wp_enqueue_script('jqueryUIWPTabs', includes_url() . 'js/jquery/ui/jquery.ui.tabs.min.js', array(), '1.0.0');
-            wp_enqueue_script('jqueryUIWPButton', includes_url() . 'js/jquery/ui/jquery.ui.button.min.js', array(), '1.0.0');
+            wp_enqueue_script('jquery-ui-core');
+            wp_enqueue_script('jquery-ui-widget');
+            wp_enqueue_script('jquery-ui-tooltip');
+            wp_enqueue_script('jquery-ui-tabs');
+            wp_enqueue_script('jqueryUIPosition');
+            wp_enqueue_script('jquery-ui-button');
+            
         }
         else
         {
-            wp_enqueue_script('jqueryUIWPCore', includes_url() . 'js/jquery/ui.core.js', array(), '1.0.0');
-            wp_enqueue_script('jqueryUIWPWidget', includes_url() . 'js/jquery/ui.widget.js', array(), '1.0.0');
-            wp_enqueue_script('jqueryUIWPPosition', includes_url() . 'js/jquery/ui.position.js', array(), '1.0.0');
-
-            wp_enqueue_script('jqueryUIWPTabs', includes_url() . 'js/jquery/ui.tabs.js', array(), '1.0.0');
-            wp_enqueue_script('jqueryUIWPButton', includes_url() . 'js/jquery/ui.button.js', array(), '1.0.0');
+            wp_enqueue_script('jquery-ui-core');
+            wp_enqueue_script('jquery-ui-widget');
+            wp_enqueue_script('jqueryUIPosition');
+            wp_enqueue_script('jquery-ui-tabs');
+            wp_enqueue_script('jquery-ui-button');
         }
 
         if( $int_version >= 350 )
         {
-            wp_enqueue_script('jqueryUIWPSpinner', includes_url() . 'js/jquery/ui/jquery.ui.spinner.min.js', array(), '1.0.0');
-            wp_enqueue_script('jqueryUIWPTooltips', includes_url() . 'js/jquery/ui/jquery.ui.tooltip.min.js', array(), '1.0.0');
+            wp_enqueue_script('jquery-ui-spinner');
+            wp_enqueue_script('jquery-ui-tooltip');
         }
 
 

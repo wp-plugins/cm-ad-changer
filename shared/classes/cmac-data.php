@@ -232,8 +232,10 @@ class CMAC_Data
 
         if( empty($errors) )
         {
-                        wp_redirect(admin_url('admin.php?page=cmac_campaigns&action=edit&saved=1&campaign_id='.$new_campaign_id));
-            return array();
+            //wp_redirect(admin_url('admin.php?page=cmac_campaigns&action=edit&saved=1&campaign_id='.$new_campaign_id));
+            //return array();
+            echo '<META HTTP-EQUIV="Refresh" Content="0; URL='.admin_url('admin.php?page=cmac_campaigns&action=edit&saved=1&campaign_id='.$new_campaign_id).'">';    
+            exit;
         }
     }
 
