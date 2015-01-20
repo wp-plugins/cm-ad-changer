@@ -50,7 +50,7 @@ var CM_AdsChanger = {};
             runtimes: 'gears,html5,flash,silverlight,browserplus',
             browse_button: 'pickfiles',
             container: 'container',
-            max_file_size: '2mb',
+            max_file_size: '10mb',
             url: ajaxurl + '?action=ac_upload_image',
             flash_swf_url: plugin_url + 'assets/js/plupload/plupload.flash.swf',
             silverlight_xap_url: plugin_url + 'assets/js/plupload/plupload.silverlight.xap',
@@ -153,8 +153,9 @@ var CM_AdsChanger = {};
                     }
                 });
 
-            } else
-                alert('Error');
+            } else {
+                alert(response.response);
+            }
         });
 
         $('.delete_button').click(function () {
@@ -230,7 +231,7 @@ var CM_AdsChanger = {};
             html += '<a href="#" class="delete_link"><img src="' + plugin_url + 'backend/assets/css/images/close.png' + '" /></a>';
             html += '</div>';
             $('#dates').append(html);
-            $('#dates .date_range_row').eq(-1).find('input[type="text"]').datepick();
+            $('#dates .date_range_row').eq(-1).find('input[type="text"]').datepicker();
 
             $('.date_range_row').eq(-1).find('.h_spinner').spinner({
                 max: 24,
@@ -251,7 +252,7 @@ var CM_AdsChanger = {};
             });
         });
 
-        $('#dates .date_range_row input[type="text"]').datepick();
+        $('#dates .date_range_row input[type="text"]').datepicker();
 
         $('.date_range_row .h_spinner').spinner({
             max: 24,

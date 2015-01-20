@@ -68,7 +68,6 @@ class CMAC_Client
         $target = (!empty($args['target_blank'])) ? 'target="_blank"' : '';
         $filteredParams = apply_filters('cmac_get_banner_params', $params);
         $banner = CMAC_Data::cmac_get_banner($filteredParams);
-
         if( isset($args['debug']) && $args['debug'] == 1 )
         {
             echo cminds_format_list($banner, 'Ad changer debug Info:', 'acc_debug');

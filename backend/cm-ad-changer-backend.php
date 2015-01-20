@@ -3,7 +3,10 @@ if( !defined('ABSPATH') )
 {
     exit;
 }
-
+define('KB', 1024);
+define('MB', 1048576);
+define('GB', 1073741824);
+define('TB', 1099511627776);
 class CMAdChangerBackend
 {
     public static $calledClassName;
@@ -257,7 +260,8 @@ class CMAdChangerBackend
             wp_enqueue_script('ad-changer-campaigns-admin-js', self::$jsPath . 'campaigns.js', array(), '1.0.0');
             wp_enqueue_script('plupload-full-js', self::$jsPath . 'plupload/plupload.full.js', array(), '1.0.0');
             wp_enqueue_script('plupload-queue-js', self::$jsPath . 'plupload/jquery.plupload.queue/jquery.plupload.queue.js', array(), '1.0.0');
-            wp_enqueue_script('datepicker', self::$jsPath . 'datepicker/jquery.datepick.js', array('jquery'), '1.0.0');
+            wp_enqueue_script('jquery-ui-datepicker');
+//            wp_enqueue_script('datepicker', self::$jsPath . 'datepicker/jquery.datepick.js', array('jquery'), '1.0.0');
             wp_enqueue_script('speechBubbles', self::$jsPath . 'speechbubbles/speechbubbles.js', array(), '1.0.0');
         }
 
@@ -377,6 +381,7 @@ class CMAdChangerBackend
      */
     public static function cmac_upload_image()
     {
+        $maxSize = 2*MB;
         $uploadedfile = $_FILES['file'];
         $upload_overrides = array('test_form' => false);
 
@@ -386,8 +391,10 @@ class CMAdChangerBackend
         {
             die(__('Error: Invalid file extension!'));
         }
-
-        if( (int) $uploadedfile['size'] > 2000000 )
+        if(preg_match("/gif/", $uploadedfile['type'])){
+            $maxSize = 5*MB;
+        }
+        if( (int) $uploadedfile['size'] > $maxSize )
         {
             die(__('Error: File too big!'));
         }

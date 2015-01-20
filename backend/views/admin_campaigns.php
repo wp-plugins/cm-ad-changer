@@ -48,7 +48,7 @@
                         <td><?php echo $campaign->banners_cnt; ?></td>
                         <td><?php echo!is_null($campaign->clicks_cnt) ? $campaign->clicks_cnt : '-'; ?></td>
                         <td><?php echo!is_null($campaign->impressions_cnt) ? $campaign->impressions_cnt : '-'; ?></td>
-                        <td><?php echo ($campaign->status == '1' ? 'Active' : 'Inactive') ?></td>
+                        <td><?php echo (($campaign->status == '1') ? 'Active' : 'Inactive') ?></td>
                         <td class="actions">
                             <a href="<?php echo get_bloginfo('wpurl') ?>/wp-admin/admin.php?page=<?php echo $pageName ?>&action=edit&campaign_id=<?php echo $campaign->campaign_id ?>"><img src="<?php echo self::$cssPath . 'images/edit.png' ?>" /></a>
                             <a href="<?php echo get_bloginfo('wpurl') ?>/wp-admin/admin.php?page=<?php echo $pageName ?>&action=delete&campaign_id=<?php echo $campaign->campaign_id ?>" class="delete_campaign_link"><img src="<?php echo self::$cssPath . 'images/trash.png' ?>" /></a>
@@ -111,7 +111,7 @@
                         <div class="field_help" title="<?php echo CMAdChangerShared::$labels['status'] ?>"></div>
                     </td>
                     <td>
-                        <input type="checkbox" aria-required="true" name="status" id="status" <?php echo (isset($fields_data['status']) ? 'checked=checked' : '') ?> />&nbsp;Active
+                        <input type="checkbox" aria-required="true" name="status" id="status" <?php echo ((isset($fields_data['status']) && $fields_data['status'] == 1) ? 'checked=checked' : '') ?> />&nbsp;Active
                     </td>
                 </tr>
             </table>
@@ -140,6 +140,7 @@
                                 {
                                     foreach($fields_data['banners'] as $banner_index => $banner)
                                     {
+                                        
                                         $clicks_rate = 0;
                                         $banner_filename = $banner['filename'];
                                         if( (int) $banner['banner_clicks_cnt'] > 0 )
@@ -153,10 +154,12 @@
                                             $filename = cmac_get_upload_url() . $banner_filename;
                                             $filename1 = cmac_get_upload_dir() . $banner_filename;
                                         }
-                                        else
+                                        elseif( file_exists(cmac_get_upload_url() . CMAC_TMP_UPLOAD_PATH . '' . $banner_filename) )
                                         {
                                             $filename = cmac_get_upload_url() . CMAC_TMP_UPLOAD_PATH . '' . $banner_filename;
                                             $filename1 = cmac_get_upload_dir() . CMAC_TMP_UPLOAD_PATH . $banner_filename;
+                                        }else{
+                                            continue;
                                         }
 
                                         // image info
