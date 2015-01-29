@@ -366,7 +366,8 @@ class CMAC_Data
     public static function cmac_get_impressions_cnt($campaign_id)
     {
         global $wpdb;
-        $impressions_cnt = $wpdb->get_var('SELECT count(*) FROM ' . self::$historyTable . ' WHERE `event_type`="impression" AND `campaign_id`="' . $campaign_id . '"');
+        //$impressions_cnt = $wpdb->get_var('SELECT count(*) FROM ' . self::$historyTable . ' WHERE `event_type`="impression" AND `campaign_id`="' . $campaign_id . '"');
+        $impressions_cnt = 0;
         return $impressions_cnt;
     }
 
@@ -378,7 +379,8 @@ class CMAC_Data
     public static function cmac_get_banner_clicks_cnt($banner_id)
     {
         global $wpdb;
-        $clicks_cnt = $wpdb->get_var('SELECT count(*) FROM ' . self::$historyTable . ' WHERE `event_type`="click" AND `banner_id`="' . $banner_id . '"');
+//        $clicks_cnt = $wpdb->get_var('SELECT count(*) FROM ' . self::$historyTable . ' WHERE `event_type`="click" AND `banner_id`="' . $banner_id . '"');
+        $clicks_cnt = 0;
         return $clicks_cnt;
     }
 
@@ -390,7 +392,8 @@ class CMAC_Data
     public static function cmac_get_banner_impressions_cnt($banner_id)
     {
         global $wpdb;
-        $impressions_cnt = $wpdb->get_var('SELECT count(*) FROM ' . self::$historyTable . ' WHERE `event_type`="impression" AND `banner_id`="' . $banner_id . '"');
+//        $impressions_cnt = $wpdb->get_var('SELECT count(*) FROM ' . self::$historyTable . ' WHERE `event_type`="impression" AND `banner_id`="' . $banner_id . '"');
+        $impressions_cnt = 0;
         return $impressions_cnt;
     }
 
@@ -402,7 +405,8 @@ class CMAC_Data
     public static function cmac_get_clicks_cnt($campaign_id)
     {
         global $wpdb;
-        $clicks_cnt = $wpdb->get_var('SELECT count(*) FROM ' . self::$historyTable . ' WHERE `event_type`="click" AND `campaign_id`="' . $campaign_id . '"');
+//        $clicks_cnt = $wpdb->get_var('SELECT count(*) FROM ' . self::$historyTable . ' WHERE `event_type`="click" AND `campaign_id`="' . $campaign_id . '"');
+        $clicks_cnt = 0;
         return $clicks_cnt;
     }
 
@@ -653,10 +657,10 @@ class CMAC_Data
         {
             default:
             case 'click':
-                $wpdb->query($wpdb->prepare('INSERT INTO ' . self::$historyTable . ' SET event_type="click", campaign_id=%d, banner_id=%d, referer_url=%s, webpage_url=%s, remote_ip=%s, remote_country=%s, campaign_type=%s', $args['campaign_id'], $args['banner_id'], $args['http_referer'], $args['webpage_url'], $args['remote_ip'], $country_name, $args['campaign_type']));
+                //$wpdb->query($wpdb->prepare('INSERT INTO ' . self::$historyTable . ' SET event_type="click", campaign_id=%d, banner_id=%d, referer_url=%s, webpage_url=%s, remote_ip=%s, remote_country=%s, campaign_type=%s', $args['campaign_id'], $args['banner_id'], $args['http_referer'], $args['webpage_url'], $args['remote_ip'], $country_name, $args['campaign_type']));
                 return true;
             case 'impression':
-                $wpdb->query($wpdb->prepare('INSERT INTO ' . self::$historyTable . ' SET event_type="impression", campaign_id=%d, banner_id=%d, referer_url=%s, webpage_url=%s, remote_ip=%s, remote_country=%s, campaign_type=%s', $args['campaign_id'], $args['banner_id'], $args['http_referer'], $args['webpage_url'], $args['remote_ip'], $country_name, $args['campaign_type']));
+                //$wpdb->query($wpdb->prepare('INSERT INTO ' . self::$historyTable . ' SET event_type="impression", campaign_id=%d, banner_id=%d, referer_url=%s, webpage_url=%s, remote_ip=%s, remote_country=%s, campaign_type=%s', $args['campaign_id'], $args['banner_id'], $args['http_referer'], $args['webpage_url'], $args['remote_ip'], $country_name, $args['campaign_type']));
                 return true;
         }
         return false;

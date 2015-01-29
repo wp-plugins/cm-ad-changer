@@ -486,3 +486,7 @@ div.cminds_call_to_action .inner_box{
 div.cminds_call_to_action a{
     text-decoration: none;
 }
+.cminds_settings_description{
+    float: left;
+    max-width: 55%;
+}
