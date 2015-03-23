@@ -4,8 +4,8 @@ Contributors: CreativeMindsSolutions
 Donate link: http://ad-changer.cminds.com/
 Tags: ad,ad,ad network,adbrite,adroll,ads,ads manager,adsense,adserver,advertisement,advertising,ajax,banner,banner ad,banner changer,banner manager,banner rotator,banners,carousel,click,click counter,clicks,commission,geo location,geolocation,google,image,image rotate,Impression,Impressions,income,inject,injection,insert,junction,manager,media,monetise,monetize,money,notification,notifications,promotion,promotions,random,referral,report,reporting,reports,responsive,responsive banner,revenue,rotate,rotating,rotator,seo,server,slider,statistics,stats,track,tracking,variation,variations,ypn,cloud,cloud,ajax,content,gallery,image,images,javascript,link,links,page,pages,plugin,post,posts,shortcode,sidebar,widget,eidgets,wordpress
 Requires at least: 3.4
-Tested up to: 4.1
-Stable tag: 1.5.1
+Tested up to: 4.1.1
+Stable tag: 1.5.4
 
 Manage, Track and Report the Advertising Campaigns and Banners on Your Site. Turn your WP into an Ad Server!
 
@@ -13,8 +13,6 @@ Manage, Track and Report the Advertising Campaigns and Banners on Your Site. Tur
 
 The CM Ad Changer manages several banner advertising campaigns across multiple WordPress sites simultaneously. As an ad-server, plugin settings manage or restrict the showing of banner ads according to each campaign parameters. Campaign settings include days of the week, custom ad campaign dates, maximum numbers of impressions or clicks per banner.
 The ad-server's management console is intuitive and easy to use. View statistic for each campaign on multiple WordPress websites. 
-
-[Visit Plugin Site](http://ad-changer.cminds.com/)
 
 [youtube http://www.youtube.com/watch?v=rBGl2ENV5Fc]
 
@@ -48,6 +46,8 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 > [Blog](http://plugin.cminds.com/blog/) | [Twitter](http://twitter.com/cmplugins)  | [Google+](https://plus.google.com/108513627228464018583/) | [LinkedIn](https://www.linkedin.com/company/creativeminds) | [YouTube](https://www.youtube.com/user/cmindschannel) | [Pinterest](http://www.pinterest.com/cmplugins/) | [FaceBook](https://www.facebook.com/cmplugins/)
 
 ---
+
+[youtube https://www.youtube.com/watch?v=bOsRBCPccQM]
 
 
 **Use-Cases**
@@ -143,8 +143,6 @@ Simply add a campaign and define upload banners. You can then insert a shortcode
 8. Plugin's Settings
 9. HTML Banners
 10. Ad-Sense Campaigns
-
-
 
 
 == Changelog ==
