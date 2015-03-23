@@ -34,7 +34,6 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 > * [Plugin User Guide](http://ad-changer.cminds.com/guide)
 
 ---
-  
 
 > #### Other Plugins By CM Plugins
 > * [Plugin Catalog](https://plugins.cminds.com/)
