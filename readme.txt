@@ -5,7 +5,7 @@ Donate link: http://ad-changer.cminds.com/
 Tags: ad,ad,ad network,adbrite,adroll,ads,ads manager,adsense,adserver,advertisement,advertising,ajax,banner,banner ad,banner changer,banner manager,banner rotator,banners,carousel,click,click counter,clicks,commission,geo location,geolocation,google,image,image rotate,Impression,Impressions,income,inject,injection,insert,junction,manager,media,monetise,monetize,money,notification,notifications,promotion,promotions,random,referral,report,reporting,reports,responsive,responsive banner,revenue,rotate,rotating,rotator,seo,server,slider,statistics,stats,track,tracking,variation,variations,ypn,cloud,cloud,ajax,content,gallery,image,images,javascript,link,links,page,pages,plugin,post,posts,shortcode,sidebar,widget,eidgets,wordpress
 Requires at least: 3.4
 Tested up to: 4.1.1
-Stable tag: 1.5.4
+Stable tag: 1.5.5
 
 Manage, Track and Report the Advertising Campaigns and Banners on Your Site. Turn your WP into an Ad Server!
 
@@ -34,6 +34,7 @@ The ad-server's management console is intuitive and easy to use. View statistic 
 > * [Plugin User Guide](http://ad-changer.cminds.com/guide)
 
 ---
+  
 
 > #### Other Plugins By CM Plugins
 > * [Plugin Catalog](https://plugins.cminds.com/)

@@ -117,6 +117,12 @@ class CMAC_Data
 
         // VALIDATIONS END
         // 1. Inserting the campaign record
+        if(!isset($data['max_clicks'])){
+            $data['max_clicks'] = 0;
+        }
+        if(!isset($data['max_impressions'])){
+            $data['max_impressions'] = 0;
+        }
         if( !isset($data['campaign_id']) )
         {
             $wpdb->query($wpdb->prepare('INSERT INTO ' . self::$campaignsTable . ' SET `title`=%s, `link`=%s, `banner_display_method`=%s, `max_impressions`=%d, `max_clicks`=%d, `comment`=%s, `status`=%d', $data['title'], $data['link'], $data['banner_display_method'], $data['max_impressions'], $data['max_clicks'], $data['comment'], isset($data['status']) ? 1 : 0));

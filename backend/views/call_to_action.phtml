@@ -1,20 +1,25 @@
 <?php
 $pluginReviewLink = 'http://wordpress.org/support/view/plugin-reviews/cm-ad-changer';
 $twitterTweet = rawurlencode('Checkout the CM Micropayment Platform ( http://wordpress.org/plugins/cm-ad-changer// https://ad-changer.cminds.com ) #WordPress #Plugin by @CMPLUGINS');
+
+ob_start();
 ?>
 
 <style type="text/css">
 
     div.cminds_call_to_action{
         display: flex;
-        text-align: center;
+        text-align: left;
+        float: left;
+        margin-bottom: 10px;
     }
 
     div.cminds_call_to_action .inner_box{
         border: 1px solid #999;
         padding: 0 0.5em 0.5em;
-        margin: 0 auto;
-        min-width: 290px;
+        min-width: 80px;
+        border-radius : 4px;
+        margin: 5px 0 5px 0 ;
     }
 
     div.cminds_call_to_action a{
@@ -28,6 +33,8 @@ $twitterTweet = rawurlencode('Checkout the CM Micropayment Platform ( http://wor
 <div class="cminds_call_to_action">
     <div id="fb-root"></div>
     <div class="inner_box">
+        <table cellpadding="10"><tr>
+        <td valign="top">
         <h3>Share your Appreciation</h3>
         <a target="_blank" href="<?php echo esc_attr($pluginReviewLink); ?>">
             <div class="btn button">
@@ -39,6 +46,7 @@ $twitterTweet = rawurlencode('Checkout the CM Micropayment Platform ( http://wor
                 <div class="dashicons dashicons-twitter"></div><span>Tweet</span>
             </div>
         </a>
+    </td><td valign="top">
         <h3>Stay Up-to-Date</h3>
         <a href="https://twitter.com/CMPLUGINS" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @CMPLUGINS</a>
         <script>!function (d, s, id) {
@@ -78,7 +86,7 @@ $twitterTweet = rawurlencode('Checkout the CM Micropayment Platform ( http://wor
         <div class="fb-like" data-href="https://www.facebook.com/cmplugins" data-width="100" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 
         <br/>
-
+    </td><td valign="top">
         <!-- Begin MailChimp Signup Form -->
         <div id="mc_embed_signup">
             <form action="//cminds.us3.list-manage.com/subscribe/post?u=f48254f757fafba2669ae5918&amp;id=142732cbf9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -94,8 +102,8 @@ $twitterTweet = rawurlencode('Checkout the CM Micropayment Platform ( http://wor
             </form>
         </div>
         <!--End mc_embed_signup-->
+    </td></tr></table>
 
     </div>
-
-    <div class="clear"></div>
 </div>
+<?php ob_end_flush();

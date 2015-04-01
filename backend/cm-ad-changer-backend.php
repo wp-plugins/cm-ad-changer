@@ -19,6 +19,8 @@ class CMAdChangerBackend
     protected static $currentActionVars = array();
     protected static $errors = array();
     protected static $success = '';
+    
+    const PAGE_YEARLY_OFFER = 'https://www.cminds.com/store/cm-wordpress-plugins-yearly-membership/';
 
     public static function instance()
     {
@@ -54,7 +56,20 @@ class CMAdChangerBackend
         add_action('wp_ajax_ac_upload_image', array(self::$calledClassName, 'cmac_upload_image'));
         add_action('wp_ajax_nopriv_ac_upload_image', array(self::$calledClassName, 'cmac_upload_image'));
     }
+    public static function admin_head()
+    {
+        echo '<style type="text/css">
+        		#toplevel_page_cmtt_menu_option a[href*="cm-wordpress-plugins-yearly-membership"] {color: white;}
+    			a[href*="cm-wordpress-plugins-yearly-membership"]:before {font-size: 16px; vertical-align: middle; padding-right: 5px; color: #d54e21;
+    				content: "\f487";
+				    display: inline-block;
+					-webkit-font-smoothing: antialiased;
+					font: normal 16px/1 \'dashicons\';
+    			}
+    			#toplevel_page_cmtt_menu_option a[href*="cm-wordpress-plugins-yearly-membership"]:before {vertical-align: bottom;}
 
+        	</style>';
+    }
     /**
      * Pages dispatcher
      * @param String   $ac_page  Page slug
@@ -122,6 +137,11 @@ class CMAdChangerBackend
         add_action($campaigns_subpage, array(self::$calledClassName, 'cmac_campaigns_action'), 0);
         add_action($settings_page, array(self::$calledClassName, 'cmac_settings_action'), 0);
         $submenu[CMAC_MENU_OPTION][0][0] = 'Settings';
+        
+        if( current_user_can('manage_options') ){
+            $submenu[CMAC_MENU_OPTION][999] = array('Yearly membership offer', 'manage_options', self::PAGE_YEARLY_OFFER);
+            add_action('admin_head', array(__CLASS__, 'admin_head'));
+        }
     }
 
     /**
